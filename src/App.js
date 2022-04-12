@@ -22,7 +22,7 @@ function App() {
 useEffect(() => {
   axios.get('https://valorant-api.com/v1/agents')
     .then((response) => {
-      setAgents(response.data)
+      setAgents(response.data.data)
     })
     .catch((error) => {
       console.log(error)
@@ -33,7 +33,7 @@ useEffect(() => {
 useEffect(() => {
   axios.get('https://valorant-api.com/v1/maps')
     .then((response) => {
-      setGameMaps(response.data)
+      setGameMaps(response.data.data)
     })
     .catch((error) => {
       console.log(error)
@@ -52,6 +52,11 @@ useEffect(() => {
         <Route 
           path = '/maps'
           element = {<Maps gameMaps={gameMaps}/>}
+        />
+
+        <Route 
+          path = '/maps/:id'
+          element = {<MapDetails gameMaps={gameMaps}/>}
         />
 
         <Route 
