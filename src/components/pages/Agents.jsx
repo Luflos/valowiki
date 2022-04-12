@@ -1,25 +1,23 @@
 import { Link } from 'react-router-dom'
 
 export default function Agents ({agents}) {
+
    const agentList = agents.map((agent, i) => {
       return (
-         <section key={`key-${i}`}>
+         <li key={`key-${i}`}>
             <img src={agent.displayIconSmall} alt="agent icon" />
-            <Link
-               to={`/agents/${agent.uuid}`}
-            >
-                  <p>
-                     {agent.displayName}
-                  </p>
+            <Link to={`/agents/${agent.uuid}`}>
+               {agent.displayName}
             </Link>
             <p>{agent.role.displayName}</p>
             <img src={agent.role.displayIcon} alt="" />
-         </section>
+         </li>
       )
    })
    return(
       <>
          <h1>Roles in Valorant</h1>
+
          <h3>Initiator</h3>
          <p>Initiators “challenge angles by setting up their team to enter contested ground and push defenders away.” These agents often excel on the offensive, setting up their teammates for success. Breach, KAY/O, and Skye offer flashes or stuns in one form or another, while Sova provides vision.</p>
 
