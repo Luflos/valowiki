@@ -58,3 +58,7 @@ An application that allows people to learn more in depth about their favorite Va
 - [] Details page for all Agents
 - [] Details page for all maps
 - [] Weapons skins tab that showcases all the various weapon skins
+
+## Resourches
+    
+- [API](https://dash.valorant-api.com/)
