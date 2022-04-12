@@ -1,5 +1,17 @@
-body {
+/* body {
     background-image:url("https://i.pinimg.com/564x/d3/39/5e/d3395ed9226a8a74c22891f4b2fe688f.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
+    height: 100%;
 }
+
+.footer {
+    background-color: hotpink;
+    border-top: 2px solid green;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-size: 20px;
+} */
