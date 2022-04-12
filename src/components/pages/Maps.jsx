@@ -1,22 +1,22 @@
 import { Link } from "react-router-dom"
 
 export default function Maps({ gameMaps }) {
-
    const mapsList = gameMaps.map((map, idx) => {
       return (
-         <li key={`map-${idx}`}>
+         <section key={`map-${idx}`} className="center">
+            {map.displayName}
             <p>
                <Link to={`/maps/${map.uuid}`}>
-                  {map.displayName}
                   <img src={map.listViewIcon} alt={map.displayName} />
                </Link>
             </p>
-         </li>
+         </section>
       )
    })
    return (
       <>
-         <h1>{mapsList}</h1>
+         <h1 className="center">List of Maps</h1>
+         {mapsList}
       </>
    )
 }
