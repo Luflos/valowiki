@@ -23,7 +23,7 @@ function App() {
 
   // useEffect to get agent data from the Valorant API
 useEffect(() => {
-  axios.get('https://valorant-api.com/v1/agents')
+  axios.get('https://valorant-api.com/v1/agents?isPlayableCharacter=true')
     .then((response) => {
       setAgents(response.data.data)
     })
