@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react"
-import MapDetails from "./MapDetails"
-import axios from "axios"
 
 export default function Maps({ gameMaps }) {
+
    const mapsList = gameMaps.map((map, idx) => {
       return (
          <li key={`map-${idx}`}>
@@ -18,8 +16,7 @@ export default function Maps({ gameMaps }) {
    })
    return (
       <>
-
-      <h1>{mapsList}</h1>
+         <h1>{mapsList}</h1>
       </>
    )
 }

@@ -11,6 +11,7 @@ import Agents from './components/pages/Agents';
 import axios from 'axios'
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import Map from './components/pages/Map';
 
 
 function App() {
@@ -59,7 +60,7 @@ useEffect(() => {
 
         <Route 
           path = '/maps/:id'
-          element = {<MapDetails gameMaps={gameMaps}/>}
+          element = {<Map />}
         />
 
         <Route 
