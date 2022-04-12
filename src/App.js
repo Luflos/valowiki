@@ -13,13 +13,15 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Map from './components/pages/Map';
 import Agent from './components/pages/Agent';
-
+import Weapons from './components/pages/Weapons';
+import Weapon from './components/pages/Weapon';
 
 function App() {
   
   // Declaring states
   const [agents, setAgents] = useState([])
   const [gameMaps, setGameMaps] = useState([])
+  const [weapons, setWeapons] = useState([])
 
 
   // useEffect to get agent data from the Valorant API
@@ -38,6 +40,17 @@ useEffect(() => {
   axios.get('https://valorant-api.com/v1/maps')
     .then((response) => {
       setGameMaps(response.data.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}, [] )
+
+// useEffect to get weapons data from the Valorant API
+useEffect(() => {
+  axios.get('https://valorant-api.com/v1/weapons')
+    .then((response) => {
+      setWeapons(response.data.data)
     })
     .catch((error) => {
       console.log(error)
@@ -72,6 +85,16 @@ useEffect(() => {
         <Route 
           path = '/agents/:id'
           element ={<Agent />}
+        />
+
+        <Route 
+          path = '/weapons'
+          element ={<Weapons weapons={weapons} />}
+        />
+
+        <Route 
+          path = '/weapons/:id'
+          element ={<Weapon />}
         />
 
       </Routes>
