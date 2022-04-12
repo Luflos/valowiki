@@ -1,9 +1,8 @@
 import '../layout/Home.css'
 
-
 export default function Home() {
    return (
-      <div>
+      <div style={{ backgroundImage:`url("https://i.pinimg.com/564x/d3/39/5e/d3395ed9226a8a74c22891f4b2fe688f.jpg")`, backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover", height:"100%"}}>
          <div style={{color:"white", border: "5px solid hotpink"}}>
             <h1>Welcome to VALOwiki</h1>
 
