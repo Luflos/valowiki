@@ -12,6 +12,7 @@ import axios from 'axios'
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Map from './components/pages/Map';
+import Agent from './components/pages/Agent';
 
 
 function App() {
@@ -66,6 +67,11 @@ useEffect(() => {
         <Route 
           path = '/agents'
           element = {<Agents agents={agents}/>}
+        />
+
+        <Route 
+          path = '/agents/:id'
+          element ={<Agent />}
         />
 
       </Routes>
