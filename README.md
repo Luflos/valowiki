@@ -22,6 +22,7 @@ An application that allows people to learn more in depth about their favorite Va
 | GET        | /      | Index (read)  | Homepage
 | GET         | agents       |  Show (read) |  List of all Agents
 | GET     | agents/:id |  Show (read)    | Details pages for specific agent
+| GET     | agents/:id/lineups | Show (read) | Display agent lineups
 | GET     | maps/ | Show (read)    | List of all maps
 | GET         | maps/:id      | Show (read) |  Details pages for specific maps
 
