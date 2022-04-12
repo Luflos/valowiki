@@ -9,6 +9,8 @@ import Home from './components/pages/Home';
 import Maps from './components/pages/Maps';
 import Agents from './components/pages/Agents';
 import axios from 'axios'
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
 
 function App() {
@@ -42,6 +44,7 @@ useEffect(() => {
 
   return (
     <Router>
+      <Navbar />
       <Routes>
 
         <Route 
@@ -61,6 +64,7 @@ useEffect(() => {
 
       </Routes>
 
+      <Footer />
     </Router>
   );
 }
