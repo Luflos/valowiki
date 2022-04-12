@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,6 +17,100 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 15px;
+  color: black;
+  /* position: sticky;
+  top: 0; */
+}
+
+.navbar Link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  margin-right: 50px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+}
+
+#toggler,
+.navbar label {
+  display: none;
+}
+
+/* breakpoint set at 600px, once it is 600px or smaller, layout change to use the following */
+@media screen and (max-width: 600px) {
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .list {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #toggler:checked ~ .menu {
+    max-height: 100%;
+  }
+}
+
+.footer {
+  background-color: hotpink;
+  border-top: 2px solid green;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: white;
+  font-size: 20px;
+} */
+
+/* .button {
+  width: 32px;
+  height: 18px;
+  font-size: 16px; */
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 25px;
+  color: #1fe8b6;
+  padding: 20px 50px;
+  border: 3px solid #1fe8b6;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* home */
+
 
 ::-webkit-scrollbar {
   width: 12px;
