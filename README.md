@@ -33,17 +33,17 @@ An application that allows people to learn more in depth about their favorite Va
 <details>
     <summary>Initial Planning</summary>
 
-![Home](./images/home.png)
+![Home](./public/images/home.png)
 
-![Agent-List](./images/agent-list.png)
+![Agent-List](./public/images/agent-list.png)
 
-![Sova](./images/sova.png)
+![Sova](./public/images/sova.png)
 
-![Brimstone](./images/brimstone.png)
+![Brimstone](./public/images/brimstone.png)
 
-![Viper](./images/viper.png)
+![Viper](./public/images/viper.png)
 
-![Sova lineup](./images/lineups.png)
+![Sova lineup](./public/images/lineups.png)
 
 </details>
 
