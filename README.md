@@ -8,25 +8,25 @@ An application that allows people to learn more in depth about their favorite Va
 ## Installation Instructions
 - tbd
 
+## Planning Tools / 
+* Figma
+* Trello
+
 ## Tech Used
 * React
 * Axios
-* Figma
-* Trello
 * Tailwind CSS
-* Javascript
+
 
 ## Routes
 | **HTTP Verb**| **URL** |  **Action**| **Description**
 |------------|-------------|------------|------------|
 | GET        | /      | Index (read)  | Homepage
-| GET         | agents       |  Show (read) |  List of all Agents
-| GET     | agents/:id |  Show (read)    | Details pages for specific agent
-| GET     | agents/:id/lineups | Show (read) | Display agent lineups
-| GET     | maps/ | Show (read)    | List of all maps
-| GET         | maps/:id      | Show (read) |  Details pages for specific maps
-| GET | lineups/map:id | Show (read) | Details of lineups for specific maps
-
+| GET         | /agents       |  Show (read) |  List of all Agents
+| GET     | /agents/:id |  Show (read)    | Details pages for specific agent
+| GET     | /agents/:id/lineups | Show (read) | Display agent lineups
+| GET     | /maps | Show (read)    | List of all maps
+| GET         | /maps/:id      | Show (read) |  Details pages for specific maps
 
 ## Wireframes / Planning
 ---
@@ -59,6 +59,6 @@ An application that allows people to learn more in depth about their favorite Va
 - [] Details page for all maps
 - [] Weapons skins tab that showcases all the various weapon skins
 
-## Resourches
+## Resources
     
 - [API](https://dash.valorant-api.com/)
