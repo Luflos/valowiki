@@ -18,6 +18,18 @@ code {
     monospace;
 }
 
+.homepage-bg {
+  background-image: url("https://i.pinimg.com/564x/d3/39/5e/d3395ed9226a8a74c22891f4b2fe688f.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.home-div {
+  color: white;
+}
+
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -29,9 +41,9 @@ code {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  background-color: hotpink;
   padding: 15px;
-  color: black;
+  color: white;
   /* position: sticky;
   top: 0; */
 }
@@ -95,18 +107,11 @@ code {
   height: 18px;
   font-size: 16px; */
 
-.button {
-  display: inline-block;
+#idk {
+  color: chartreuse;
+  background-color: chartreuse;
+  font-size: 50px;
   text-decoration: none;
-  font-size: 25px;
-  color: #1fe8b6;
-  padding: 20px 50px;
-  border: 3px solid #1fe8b6;
-  position: relative;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 /* home */
