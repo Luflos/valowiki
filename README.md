@@ -24,9 +24,27 @@ An application that allows people to learn more in depth about their favorite Va
 | GET     | agents/:id |  Show (read)    | Details pages for specific agent
 | GET     | maps/ | Show (read)    | List of all maps
 | GET         | maps/:id      | Show (read) |  Details pages for specific maps
+| GET | lineups/map:id | Show (read) | Details of lineups for specific maps
 
 
 ## Wireframes / Planning
+---
+<details>
+    <summary>Initial Planning</summary>
+
+![Home](./images/home.png)
+
+![Agent-List](./images/agent-list.png)
+
+![Sova](./images/sova.png)
+
+![Brimstone](./images/brimstone.png)
+
+![Viper](./images/viper.png)
+
+![Sova lineup](./images/lineups.png)
+
+</details>
 
 ## MVP
 - [] Homepage that shows a description of the game / app 
