@@ -14,9 +14,9 @@ export default function Weapons({ weapons }) {
       )
    })
    return (
-      <>
+      <div className="background-color">
          <h1 className="center">List of Weapons</h1>
          {weaponsList}
-      </>
+      </div>
    )
 }

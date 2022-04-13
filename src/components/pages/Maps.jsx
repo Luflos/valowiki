@@ -14,9 +14,9 @@ export default function Maps({ gameMaps }) {
       )
    })
    return (
-      <>
+      <div className="background-color">
          <h1 className="center">List of Maps</h1>
          {mapsList}
-      </>
+      </div>
    )
 }
