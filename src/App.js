@@ -15,6 +15,7 @@ import Map from './components/pages/Map';
 import Agent from './components/pages/Agent';
 import Weapons from './components/pages/Weapons';
 import Weapon from './components/pages/Weapon';
+import Lineups from './components/pages/Lineups';
 
 function App() {
   
@@ -97,6 +98,10 @@ useEffect(() => {
           element ={<Weapon />}
         />
 
+        <Route 
+          path='/lineups'
+          element={<Lineups />}
+        />
       </Routes>
 
       <Footer />

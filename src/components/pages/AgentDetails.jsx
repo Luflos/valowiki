@@ -1,5 +1,6 @@
+import "../layout/AgentDetails.css"
+
 export default function AgentDetails ({agentData, abilityData}) {
-    // console.log(abilityData.abilities)
       const abilities = abilityData.map((ability, idx) => {
         return(
             <li key={idx}>
@@ -11,7 +12,7 @@ export default function AgentDetails ({agentData, abilityData}) {
     })
 
     return (
-        <>
+        <div className="agentDetails-Container">
             <h1>{agentData.displayName}</h1>
             <img src={agentData.background} alt={agentData.displayName}/>
             <img src={agentData.fullPortraitV2} alt={agentData.displayName} />
@@ -19,6 +20,6 @@ export default function AgentDetails ({agentData, abilityData}) {
             
             <h1>Abilities</h1>
             {abilities}
-        </>
+        </div>
     )
 }

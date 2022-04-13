@@ -1,19 +1,11 @@
-/* HOME Page Styling */
-.homepage-bg {
-    background-image: url("https://wallpapercave.com/wp/wp6162914.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-  }
-  
+/* HOME Page Styling */  
   .home-div {
     color: white;
   }
   
-  #idk {
-    color: chartreuse;
-    background-color: chartreuse;
-    font-size: 50px;
-    text-decoration: none;
+  .valo-vid {
+    width: 50vw;
+    margin: 20px;
   }
+
+  
