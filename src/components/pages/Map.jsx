@@ -12,7 +12,7 @@ export default function Map() {
          .get(`https://valorant-api.com/v1/maps/${id}`)
          .then((response) => {
             setMapData(response.data.data)
-            console.log(response.data)
+            // console.log(response.data)
          })
          .catch(console.log)
    }, [])
