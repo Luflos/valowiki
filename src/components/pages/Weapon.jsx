@@ -8,6 +8,7 @@ export default function Weapon() {
    const [weaponData, setWeaponData] = useState([])
    const [weaponStats, setWeaponStats] = useState([])
    const [weaponShop, setWeaponShop] = useState([])
+   const [weaponSkins, setWeaponSkins] = useState([])
 
    useEffect(() => {
       axios
@@ -16,10 +17,15 @@ export default function Weapon() {
             setWeaponData(response.data.data)
             setWeaponStats(response.data.data.weaponStats)
             setWeaponShop(response.data.data.shopData)
+            setWeaponSkins(response.data.data.skins)
             console.log(response.data)
          })
          .catch(console.log)
    }, [])
 
-   return <WeaponDetails weaponData={weaponData} weaponStats={weaponStats} weaponShop={weaponShop}/>
+   return (
+      <div className="background-color">
+         <WeaponDetails weaponData={weaponData} weaponStats={weaponStats} weaponShop={weaponShop} weaponSkins={weaponSkins}/>
+      </div>
+   )
 }

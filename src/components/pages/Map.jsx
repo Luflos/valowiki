@@ -17,5 +17,9 @@ export default function Map() {
          .catch(console.log)
    }, [])
 
-   return <MapDetails mapData={mapData} />
+   return (
+      <div className="background-color">
+         <MapDetails mapData={mapData} />
+      </div>
+   )
 }
