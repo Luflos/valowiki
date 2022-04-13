@@ -7,7 +7,7 @@ export default function Navbar() {
             <input type="checkbox" id="toggler"/>
             <label htmlFor="toggler"><i className="ri-menu-line"></i></label>
             <div className="menu">
-                <ul className="list" style={{}}>
+                <ul className="list">
                     <li>
                         <Link to="/agents" className='nav-link'>Agents</Link>
                     </li>

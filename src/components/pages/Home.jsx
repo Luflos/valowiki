@@ -1,22 +1,20 @@
 import { Link } from "react-router-dom"
 import "../layout/Home.css"
+import ValoVid from "../video/home-bg.mp4"
 
 export default function Home() {
    return (
-      <div className="homepage-bg">
+      <div>
          <div className="home-div center">
             <h1>Welcome to VALOWIKI</h1>
+            <h4>Valowiki is an app created for Valorant players who want to learn more about their favorite agents and also improve their gameplay.</h4>
 
-            <h3>Valorant is a free-to-play competitive 5v5 character-based tactical shooter game, developed by Riot Games. Set in a near-future Earth, you team up with four other players against five enemies in round-based combat with an agent of your choice. </h3>
-
-            <h3>Valowiki is an app created for Valorant players who want to learn more about their favorite agents and also improve their gameplay.</h3>
-         </div>
-
-         <div className="center">
-            <button className="idk"><Link to="/agents">Agents</Link></button>
-
-            <Link className="idk" to="/maps">Maps</Link>
-
+            <h4><a href="https://playvalorant.com/en-us/" target="_blank">VALORANT</a> is a free-to-play competitive 5v5 character-based tactical shooter game, developed by Riot Games. Set in a near-future Earth, you team up with four other players against five enemies in round-based combat with an agent of your choice. Creativity is your greatest weapon.</h4>
+            <div className="center">
+               <video autoPlay loop muted className="valo-vid">
+                  <source src={ValoVid} type="video/mp4"/>
+               </video>
+            </div>
          </div>
       </div>
    )
