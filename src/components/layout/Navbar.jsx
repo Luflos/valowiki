@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom"
-
+import "../layout/Navbar.css"
 export default function Navbar() {
     return (
         <nav className="navbar">
-            <Link className="logo" to="/">VALOwiki</Link>
+            <Link to="/"><img src="images/logo.png" alt="valorant logo" className='val-logo'/></Link>
             <input type="checkbox" id="toggler"/>
             <label htmlFor="toggler"><i className="ri-menu-line"></i></label>
             <div className="menu">
-                <ul className="list">
+                <ul className="list" style={{}}>
                     <li>
-                        <Link to="/agents">Agents</Link>
+                        <Link to="/agents" className='nav-link'>Agents</Link>
                     </li>
                     <li>
-                        <Link to="/maps">Maps</Link>
+                        <Link to="/maps" className='nav-link'>Maps</Link>
                     </li>
                     <li>
-                        <Link to="/weapons">Weapons</Link>
+                        <Link to="/weapons" className='nav-link'>Weapons</Link>
                     </li>
                 </ul>
             </div>

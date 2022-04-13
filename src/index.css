@@ -18,105 +18,7 @@ code {
     monospace;
 }
 
-.homepage-bg {
-  background-image: url("https://i.pinimg.com/564x/d3/39/5e/d3395ed9226a8a74c22891f4b2fe688f.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-}
-
-.home-div {
-  color: white;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 12px
-}
-
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  background-color: hotpink;
-  padding: 15px;
-  color: white;
-  /* position: sticky;
-  top: 0; */
-}
-
-.navbar Link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.logo {
-  margin-right: 50px;
-}
-
-.list {
-  list-style: none;
-  display: flex;
-}
-
-#toggler,
-.navbar label {
-  display: none;
-}
-
-/* breakpoint set at 600px, once it is 600px or smaller, layout change to use the following */
-@media screen and (max-width: 600px) {
-  .menu {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  .list {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .navbar label {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  #toggler:checked ~ .menu {
-    max-height: 100%;
-  }
-}
-
-.footer {
-  background-color: hotpink;
-  border-top: 2px solid green;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  color: white;
-  font-size: 20px;
-} */
-
-/* .button {
-  width: 32px;
-  height: 18px;
-  font-size: 16px; */
-
-#idk {
-  color: chartreuse;
-  background-color: chartreuse;
-  font-size: 50px;
-  text-decoration: none;
-}
-
-/* home */
-
-
+/* SCROLLBAR styling */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -130,6 +32,7 @@ code {
   background: linear-gradient(rgb(134, 239, 172), rgb(59,130,246), rgb(147,51,234))
 }
 
+/* Universal Styling */
 .center {
   text-align: center;
 }
@@ -137,3 +40,5 @@ code {
 .rotate {
   transform: rotate(90deg);
 }
+
+
