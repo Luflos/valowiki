@@ -34,12 +34,12 @@ export default function Lineups(){
                     <ReactPlayer controls url={aHellToHeaven} />
                 </div>
 
-                <h3>Ct to Boat</h3>
+                <h3>CT to Boat</h3>
                 <div>
                     <ReactPlayer controls url={ctToBoat} />
                 </div>
 
-                <h3>Ct Spawn to A</h3>
+                <h3>CT Spawn to A</h3>
                 <div>
                     <ReactPlayer controls url={ctSpawnToA} />
                 </div>
@@ -47,7 +47,7 @@ export default function Lineups(){
 
             <div>
                 <h2>Haven Sova Line Ups</h2>
-                
+
                 <h3>Garage Recon</h3>
                 <div>
                     <ReactPlayer controls url={garageRecon} />
