@@ -1,0 +1,60 @@
+/* NAVBAR Styling */  
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(10,18,27);
+    padding: 15px;
+    color: white;
+    position: sticky;
+    top: 0;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .val-logo {
+    margin-right: 50px;
+    width: 50px;
+  }
+  
+  .list {
+    list-style: none;
+    display: flex;
+  }
+  
+  
+  
+  #toggler,
+  .navbar label {
+    display: none;
+  }
+  
+  /* breakpoint set at 600px, once it is 600px or smaller, layout change to use the following */
+  @media screen and (max-width: 600px) {
+    .menu {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+    }
+  
+    .list {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .navbar label {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    #toggler:checked ~ .menu {
+      max-height: 100%;
+    }
+  }
+  
