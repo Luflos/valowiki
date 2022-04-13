@@ -23,6 +23,7 @@ function App() {
   const [agents, setAgents] = useState([])
   const [gameMaps, setGameMaps] = useState([])
   const [weapons, setWeapons] = useState([])
+  const [news, setNews] = useState([])
 
 
   // useEffect to get agent data from the Valorant API
@@ -57,6 +58,14 @@ useEffect(() => {
       console.log(error)
     })
 }, [] )
+
+var config = {
+  method: 'get',
+  url: 'https://vlrggapi.herokuapp.com/news',
+  headers: {
+    'accept': 'application/json'
+  }
+}
 
   return (
     <Router>

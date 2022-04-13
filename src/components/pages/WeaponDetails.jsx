@@ -3,7 +3,6 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
    const skinList = weaponSkins.map((skin, idx) => {
       return (
          <div key={`skin-${idx}`}>
-            {skin.displayName}
             <p>
                <img src={skin.chromas[0].fullRender} alt={skin.displayName} />
             </p>
