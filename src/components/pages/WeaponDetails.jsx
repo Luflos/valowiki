@@ -1,5 +1,7 @@
+import "../layout/Weapons.css"
+
 export default function WeaponDetails({ weaponData, weaponStats, weaponShop, weaponSkins }) {
-   
+  
    const skinList = weaponSkins.map((skin, idx) => {
       return (
          <div key={`skin-${idx}`}>
@@ -13,21 +15,19 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
 
    return (
       <section className="center">
+
          <h1>{weaponData.displayName}</h1>
          <img src={weaponData.displayIcon} alt={weaponData.displayName} />
-         <p>
-            Category: {weaponShop.category}
-            <br></br>
-            Price: {weaponShop.cost}
-         </p>
-         <p>
-            Fire Rate: {weaponStats.fireRate}
-            <br></br>
-            Magazine Size:{weaponStats.magazineSize}
-         </p>
+
+         {weaponShop === null ? "" : <p>Category: {weaponShop.category} <br></br> Price: {weaponShop.cost}</p>}
+   
+         {weaponStats === null ? "" : <p>Fire Rate: {weaponStats.fireRate} <br></br> Magazine Size: {weaponStats.magazineSize}</p>}
          <br></br>
+         
          SKINS
+         <div className="grid-container">
          {skinList}
+         </div>
       </section>
    )
 }
