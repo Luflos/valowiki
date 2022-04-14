@@ -212,6 +212,14 @@ export default function Navbar() {
 
           <li className="padding-top">
             <Link to="/lineups">Line Ups</Link>
+            <ul>
+                  <li>
+                    <Link to="/lineups/sova">Sova</Link>
+                  </li>
+                  <li>
+                    <Link to="/lineups/cypher">Cypher</Link>
+                  </li>
+                </ul>
           </li>
 
         </ul>
