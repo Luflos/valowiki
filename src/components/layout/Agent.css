@@ -1,6 +1,7 @@
 .agentContainer {
     background-color: rgb(10,18,27);
     color: white;
+    text-align: center;
 }
 
 .wrapper {
@@ -17,6 +18,7 @@
   display: flex;
   flex-direction: row;
   border: 1px solid white;
+  width: 220px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -37,4 +39,27 @@
 .agent-link {
     color: red;
     text-decoration: none;
+    padding-bottom: 2px;
+}
+
+.roleContainer {
+  width: 50%;
+  height: 50%;
+  float: left;
+  border: 1px solid white;
+  padding: 24px;
+  margin: 53px;
+}
+
+.agentTitle{
+  padding: 10px;
+}
+
+.roleName {
+  color: red;
+  padding: 3px;
+}
+
+.agent-img {
+  width: 60vw;
 }
