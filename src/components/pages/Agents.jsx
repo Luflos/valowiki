@@ -8,7 +8,7 @@ export default function Agents ({agents}) {
       return (
          <div className="wrapper center" key={`key-${i}`}>
             <div className="card">
-               <img src={agent.displayIconSmall} alt="agent icon" className="card__image"/>
+            <Link  className="agent-link" to={`/agents/${agent.uuid}`}><img src={agent.displayIconSmall} alt="agent icon" className="card__image"/></Link>
                <div className="container">
                   <h4><b><Link  className="agent-link" to={`/agents/${agent.uuid}`}>{agent.displayName}</Link></b></h4>
                   <p>{agent.role.displayName}</p>
@@ -38,7 +38,9 @@ export default function Agents ({agents}) {
          <p>Controllers are experts in “slicing up dangerous territory to set their team up for success." This usually comes in the form of smokes, which can be used to offensively or defensively block off a target's vision but also slows, stuns, and in some cases, flashes.</p>
          
          <h1>List of Agents</h1>
-         {agentList}
+         <div>
+            {agentList}
+         </div>
       </div>
    )
 }
