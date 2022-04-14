@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams } from 'react-router-dom'
 import AgentDetails from './AgentDetails'
 
 import axios from 'axios'
@@ -19,7 +19,7 @@ export default function Agent() {
         .catch((error) => {
             console.log(error)
         })
-    }, [])
+    }, [id])
 
 
     console.log(abilityData)

@@ -14,7 +14,7 @@ export default function Map() {
             setMapData(response.data.data)
          })
          .catch(console.log)
-   }, [])
+   }, [id])
 
    return (
       <div className="background-color">
