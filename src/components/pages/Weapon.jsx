@@ -21,7 +21,7 @@ export default function Weapon() {
             // console.log(response.data)
          })
          .catch(console.log)
-   }, [])
+   }, [id])
 
    return (
       <div className="background-color">
