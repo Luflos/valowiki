@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "../layout/Navbar.css";
+
 export default function Navbar() {
   return (
     <nav className="nav-area">
-
-      {/* Weapons dropdown */}
         <ul>
           <li>
             <Link to="/">
@@ -123,6 +122,92 @@ export default function Navbar() {
 
           <li className="padding-top">
             <Link to="/weapons">Weapons</Link>
+            <ul>
+              <li>
+                <Link to="/weapons">Pistols</Link>
+                <ul>
+                  <li>
+                    <Link to="/weapons/29a0cfab-485b-f5d5-779a-b59f85e204a8">Classic</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/44d4e95c-4157-0037-81b2-17841bf2e8e3">Frenzy</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/1baa85b4-4c70-1284-64bb-6481dfc3bb4e">Ghost</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/e336c6b8-418d-9340-d77f-7a9e4cfe0702">Sheriff</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/42da8ccc-40d5-affc-beec-15aa47b42eda">Shorty</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/weapons">SMGs</Link>
+                <ul>
+                  <li>
+                    <Link to="/weapons/462080d1-4035-2937-7c09-27aa2a5c27a7">Spectre</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/f7e1b454-4ad4-1063-ec0a-159e56b58941">Stinger</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/weapons">Shotguns</Link>
+                <ul>
+                  <li>
+                    <Link to="/weapons/910be174-449b-c412-ab22-d0873436b21b">Bucky</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/ec845bf4-4f79-ddda-a3da-0db3774b2794">Judge</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/weapons">Rifles</Link>
+                <ul>
+                  <li>
+                    <Link to="/weapons/ae3de142-4d85-2547-dd26-4e90bed35cf7">Bulldog</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/4ade7faa-4cf1-8376-95ef-39884480959b">Guardian</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a">Phantom</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872">Vandal</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/weapons">Sniper Rifles</Link>
+                <ul>
+                  <li>
+                    <Link to="/weapons/c4883e50-4494-202c-3ec3-6b8a9284f00b">Marshal</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/a03b24d3-4319-996d-0f8c-94bbfba1dfc7">Operator</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/weapons">Heavy Weapons</Link>
+                <ul>
+                  <li>
+                    <Link to="/weapons/55d8a0f4-4274-ca67-fe2c-06ab45efdf58">Ares</Link>
+                  </li>
+                  <li>
+                    <Link to="/weapons/63e6c2b6-4a8e-869c-3d4c-e38355226584">Odin</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/weapons/2f59173c-4bed-b6c3-2191-dea9b58be9c7">Melee</Link>
+              </li>
+            </ul>
           </li>
 
           <li className="padding-top">

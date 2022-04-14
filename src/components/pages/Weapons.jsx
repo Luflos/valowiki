@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import "../layout/Weapons.css"
 
 export default function Weapons({ weapons }) {
-   // console.log(weapons)
    const categories = new Map()
 
    for (let index = 0; index < weapons.length; index++) {
@@ -32,7 +31,7 @@ export default function Weapons({ weapons }) {
             </div>
          )
       })
-      weaponsList.push(<div className="grid-container">{weaponsGroup}</div>)
+      weaponsList.push(<div className="weapons-container">{weaponsGroup}</div>)
    }
 
    return (
