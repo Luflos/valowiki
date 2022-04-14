@@ -16,29 +16,13 @@ export default function Agents ({agents}) {
             </div>
          </div>
 
-
-         // <div className="container">
-         //    <div className='card'>
-         //          <img src={agent.displayIconSmall} alt="agent icon" className="card__image"/>
-         //          <h2>{agent.displayName}</h2>
-         //          <p>{agent.role.displayName}</p>
-         //       <button><Link to={`/agents/${agent.uuid}`}>More Information</Link></button>
-         // </div>
-         // </div>
-
-         // <li key={`key-${i}`} className="center">
-         //    <img src={agent.displayIconSmall} alt="agent icon" className="img"/>
-         //    <Link to={`/agents/${agent.uuid}`}>
-         //       {agent.displayName}
-         //    </Link>
-         //    <p>{agent.role.displayName}</p>
-         //    <img src={agent.role.displayIcon} alt="agent role icon" className="img"/>
-         // </li>
       )
    })
    return(
       <div className="agentContainer">
-         <img src="https://wallpapercave.com/dwp1x/wp8723098.jpg" alt="" className="agent-img"/>
+         <div>
+            <img src="https://wallpapercave.com/dwp1x/wp8723098.jpg" alt="" className="center"/>
+         </div>
          <h1 className="center">Roles in Valorant</h1>
          <div>
             <h3>Initiators</h3>
@@ -56,7 +40,9 @@ export default function Agents ({agents}) {
          <p>Controllers are experts in “slicing up dangerous territory to set their team up for success." This usually comes in the form of smokes, which can be used to offensively or defensively block off a target's vision but also slows, stuns, and in some cases, flashes.</p>
          
          <h1>List of Agents</h1>
-         {agentList}
+         <div>
+            {agentList}
+         </div>
       </div>
    )
 }
