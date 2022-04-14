@@ -12,8 +12,8 @@ export default function Lineups(){
             </div>
 
             <div>
-                <Link to='/lineups/sova'><h1>Sova Line Ups</h1></Link>
-                <Link to='/lineups/cypher'><h1>Cypher Set Ups</h1></Link>
+                <Link to='/lineups/sova'><h1>Sova Lineups</h1></Link>
+                <Link to='/lineups/cypher'><h1>Cypher Setups</h1></Link>
             </div>
         </div>
     )
