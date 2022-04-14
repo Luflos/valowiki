@@ -1,3 +1,8 @@
+.agentContainer {
+  background-color: rgb(10,18,27);
+  color: white;
+  text-align: center;
+}
 
 .wrapper {
   display: inline-flex;
@@ -37,20 +42,13 @@ padding: 2px 16px;
   padding-bottom: 2px;
 }
 
-.agentContainer {
-  background-color: rgb(10,18,27);
-  color: white;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-
 .roleContainer {
 width: 50%;
 height: 50%;
 float: left;
 border: 1px solid white;
+padding: 24px;
+margin: 53px;
 }
 
 .agentTitle{
