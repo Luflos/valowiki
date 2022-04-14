@@ -8,7 +8,7 @@ export default function Agents ({agents}) {
       return (
          <div className="wrapper center" key={`key-${i}`}>
             <div className="card">
-               <img src={agent.displayIconSmall} alt="agent icon" className="card__image"/>
+            <Link  className="agent-link" to={`/agents/${agent.uuid}`}><img src={agent.displayIconSmall} alt="agent icon" className="card__image"/></Link>
                <div className="container">
                   <h4><b><Link  className="agent-link" to={`/agents/${agent.uuid}`}>{agent.displayName}</Link></b></h4>
                   <p>{agent.role.displayName}</p>

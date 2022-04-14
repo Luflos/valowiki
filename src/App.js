@@ -16,6 +16,8 @@ import Agent from './components/pages/Agent';
 import Weapons from './components/pages/Weapons';
 import Weapon from './components/pages/Weapon';
 import Lineups from './components/pages/Lineups';
+import Sova from './components/pages/Sova';
+import Cypher from './components/pages/Cypher';
 
 function App() {
   
@@ -110,6 +112,16 @@ var config = {
         <Route 
           path='/lineups'
           element={<Lineups />}
+        />
+
+        <Route 
+          path='/lineups/sova'
+          element={<Sova />}
+        />
+
+        <Route 
+          path='/lineups/cypher'
+          element={<Cypher />}
         />
       </Routes>
 
