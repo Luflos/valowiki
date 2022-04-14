@@ -1,13 +1,3 @@
-import bToMid from "../video/b-to-mid.mp4"
-import aHellToHeaven from "../video/aHell-to-heaven.mp4"
-import bSiteToA from "../video/bSite-to-A.mp4"
-import cMainToCSite from "../video/c-main-to-c-site.mp4"
-import ctToBoat from "../video/ct-to-boat.mp4"
-import ctSpawnToA from "../video/ctspawn-to-a.mp4"
-import garageRecon from "../video/garageRecon.mp4"
-import tSpawnToGarage from "../video/tspawn-to-garage.mp4"
-
-
 import ReactPlayer from 'react-player'
 
 
@@ -26,46 +16,46 @@ export default function Lineups(){
 
                 <h3>B Site to Mid</h3>
                 <div>
-                    <ReactPlayer controls url={bToMid}/>
+                    <ReactPlayer controls url="https://youtu.be/Dm_AnZbeamE"/>
                 </div>
 
                 <h3>A Hell to Heaven</h3>
                 <div>
-                    <ReactPlayer controls url={aHellToHeaven} />
+                    <ReactPlayer controls url="https://www.youtube.com/watch?v=7lR2_FfKqUk"/>
                 </div>
 
-                <h3>Ct to Boat</h3>
+                <h3>CT to Boat</h3>
                 <div>
-                    <ReactPlayer controls url={ctToBoat} />
+                    <ReactPlayer controls url="https://youtu.be/RCdzMhXYvn8" />
                 </div>
 
-                <h3>Ct Spawn to A</h3>
+                <h3>CT Spawn to A</h3>
                 <div>
-                    <ReactPlayer controls url={ctSpawnToA} />
+                    <ReactPlayer controls url="https://youtu.be/Csqb_JKoOwo" />
                 </div>
             </div>
 
             <div>
                 <h2>Haven Sova Line Ups</h2>
-                
+
                 <h3>Garage Recon</h3>
                 <div>
-                    <ReactPlayer controls url={garageRecon} />
+                    <ReactPlayer controls url="https://youtu.be/TR_OlrD8e_4"/>
                 </div>
 
                 <h3>T Spawn To Garage</h3>
                 <div>
-                    <ReactPlayer controls url={tSpawnToGarage} />
+                    <ReactPlayer controls url="https://youtu.be/K9p7Hu9zSWU" />
                 </div>
 
                 <h3>C Main to C Site</h3>
                 <div>
-                    <ReactPlayer controls url={cMainToCSite} />
+                    <ReactPlayer controls url="https://youtu.be/bY5wwODz3S4" />
                 </div>
 
-                <h3>B Site to A Site</h3>
+                <h3>B Link to A Site</h3>
                 <div>
-                    <ReactPlayer controls url={bSiteToA} />
+                    <ReactPlayer controls url="https://youtu.be/ENo5rg6PLmg" />
                 </div>
             </div>
 

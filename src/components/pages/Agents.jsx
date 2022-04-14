@@ -6,14 +6,34 @@ import {useState, useEffect} from 'react'
 export default function Agents ({agents}) {
    const agentList = agents.map((agent, i) => {
       return (
-         <li key={`key-${i}`} className="center">
-            <img src={agent.displayIconSmall} alt="agent icon" className="img"/>
-            <Link to={`/agents/${agent.uuid}`}>
-               {agent.displayName}
-            </Link>
-            <p>{agent.role.displayName}</p>
-            <img src={agent.role.displayIcon} alt="agent role icon" className="img"/>
-         </li>
+         <div className="wrapper center" key={`key-${i}`}>
+            <div className="card">
+               <img src={agent.displayIconSmall} alt="agent icon" className="card__image"/>
+               <div className="container">
+                  <h4><b><Link  className="agent-link" to={`/agents/${agent.uuid}`}>{agent.displayName}</Link></b></h4>
+                  <p>{agent.role.displayName}</p>
+               </div>
+            </div>
+         </div>
+
+
+         // <div className="container">
+         //    <div className='card'>
+         //          <img src={agent.displayIconSmall} alt="agent icon" className="card__image"/>
+         //          <h2>{agent.displayName}</h2>
+         //          <p>{agent.role.displayName}</p>
+         //       <button><Link to={`/agents/${agent.uuid}`}>More Information</Link></button>
+         // </div>
+         // </div>
+
+         // <li key={`key-${i}`} className="center">
+         //    <img src={agent.displayIconSmall} alt="agent icon" className="img"/>
+         //    <Link to={`/agents/${agent.uuid}`}>
+         //       {agent.displayName}
+         //    </Link>
+         //    <p>{agent.role.displayName}</p>
+         //    <img src={agent.role.displayIcon} alt="agent role icon" className="img"/>
+         // </li>
       )
    })
    return(

@@ -42,6 +42,10 @@ export default function Navbar() {
             <Link to="/weapons">Weapons</Link>
           </li>
 
+          <li className="padding-top">
+            <Link to="/lineups">Line Ups</Link>
+          </li>
+
         </ul>
     </nav>
   );

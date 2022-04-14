@@ -113,7 +113,7 @@ var config = {
         />
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }
