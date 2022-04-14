@@ -32,8 +32,13 @@
 
 /* weapons detail */
 .skins-container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: auto auto auto;
   background-color: rgb(10,18,27);
-  padding: 10px;
+  padding: 10px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
