@@ -16,29 +16,11 @@ export default function Agents ({agents}) {
             </div>
          </div>
 
-
-         // <div className="container">
-         //    <div className='card'>
-         //          <img src={agent.displayIconSmall} alt="agent icon" className="card__image"/>
-         //          <h2>{agent.displayName}</h2>
-         //          <p>{agent.role.displayName}</p>
-         //       <button><Link to={`/agents/${agent.uuid}`}>More Information</Link></button>
-         // </div>
-         // </div>
-
-         // <li key={`key-${i}`} className="center">
-         //    <img src={agent.displayIconSmall} alt="agent icon" className="img"/>
-         //    <Link to={`/agents/${agent.uuid}`}>
-         //       {agent.displayName}
-         //    </Link>
-         //    <p>{agent.role.displayName}</p>
-         //    <img src={agent.role.displayIcon} alt="agent role icon" className="img"/>
-         // </li>
       )
    })
    return(
-      <div className="agentContainer">
-         <img src="https://wallpapercave.com/dwp1x/wp8723098.jpg" alt="" className="agent-img"/>
+      <div className="agentContainer center">
+         <img src="https://wallpapercave.com/dwp1x/wp8723098.jpg" alt="picture of agents" className="agent-img"/>
          <h1 className="center">Roles in Valorant</h1>
          <div>
             <h3>Initiators</h3>
