@@ -22,7 +22,6 @@ export default function Weapons({ weapons }) {
          return (
             <div key={`weapon-${idx}`} className="center">
                {weapon.displayName}
-               <br></br>
                <p>
                   <Link to={`/weapons/${weapon.uuid}`}>
                      <img src={weapon.displayIcon} alt={weapon.displayName} />

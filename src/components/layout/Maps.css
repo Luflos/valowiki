@@ -1,0 +1,13 @@
+   .maps-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      height: 60vh;
+      margin: 10rem;
+   }
+
+   .map-imgs {
+      max-width: 100%;
+      height:auto;
+   }
+
