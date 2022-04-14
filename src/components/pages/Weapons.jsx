@@ -31,7 +31,7 @@ export default function Weapons({ weapons }) {
             </div>
          )
       })
-      weaponsList.push(<div className="grid-container">{weaponsGroup}</div>)
+      weaponsList.push(<div className="weapons-container">{weaponsGroup}</div>)
    }
 
    return (
