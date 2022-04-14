@@ -14,11 +14,21 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
    return (
       <section className="center">
          <h1 style={{marginBottom:30}}>{weaponData.displayName}</h1>
-         <img src={weaponData.displayIcon} alt={weaponData.displayName} />
+         <div className="spec-weapon">
+            <img src={weaponData.displayIcon} alt={weaponData.displayName} />
+            <div className="overlay fade-overlay">
+               <div className="text">
 
-         {weaponShop === null ? "" : <p>Category: {weaponShop.category} <br></br> Price: {weaponShop.cost} Creds</p>}
+               {weaponShop === null ? "" : <p>Category: {weaponShop.category} <br></br> Price: {weaponShop.cost} Creds</p>}
    
-         {weaponStats === null ? "" : <p>Fire Rate: {weaponStats.fireRate} <br></br> Magazine Size: {weaponStats.magazineSize}</p>}
+                {weaponStats === null ? "" : <p>Fire Rate: {weaponStats.fireRate} <br></br> Magazine Size: {weaponStats.magazineSize}</p>}
+                </div>
+            </div>
+         </div>
+
+         {/* {weaponShop === null ? "" : <p>Category: {weaponShop.category} <br></br> Price: {weaponShop.cost} Creds</p>}
+   
+         {weaponStats === null ? "" : <p>Fire Rate: {weaponStats.fireRate} <br></br> Magazine Size: {weaponStats.magazineSize}</p>} */}
          
          <h1 style={{marginBottom:30, marginTop:80}}>
          {weaponData.displayName} Skins

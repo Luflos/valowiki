@@ -42,3 +42,40 @@
   align-items: center;
   justify-content: center;
 }
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.spec-weapon {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.fade-overlay {
+  height: 100%;
+  opacity: 0;
+}
+
+.spec-weapon:hover .fade-overlay {
+  opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
