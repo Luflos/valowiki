@@ -21,7 +21,7 @@ export default function Agents ({agents}) {
    return(
       <div className="agentContainer">
          <div>
-            <img src="https://wallpapercave.com/dwp1x/wp8723098.jpg" alt="" className="center"/>
+            <img src="https://wallpapercave.com/dwp1x/wp8723098.jpg" alt="picture of valorant" className="center"/>
          </div>
          <h1 className="center">Roles in Valorant</h1>
          <div>
