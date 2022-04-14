@@ -1,52 +1,39 @@
-.grid-container {
-   display: grid;
-   grid-template-columns: auto auto auto;
-   background-color: rgb(10,18,27);
-   padding: 10px;
- }
-
 .weapons-container{
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   grid-auto-rows: minmax(100px, auto);
-
-}
-
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
-
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .weapons-h1 {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  border: 5px solid white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .weapons-h2 {
   padding-top: 4rem;
-  padding-bottom: 3rem;
-  border: 5px solid red;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .weapons-div {
-  padding: 2rem 20rem 5rem 20rem;
-  border: 5px solid hotpink;
+  padding: 0rem 40rem 5rem 40rem;
 }
 
 .weapons-img {
   /* padding-top: 2rem; */
-  padding-bottom: 2rem;
-  border: 5px solid green;
+  padding-bottom: 4rem;
+}
+
+/* weapons detail */
+.skins-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: rgb(10,18,27);
+  padding: 10px;
 }

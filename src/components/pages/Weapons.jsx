@@ -20,9 +20,10 @@ export default function Weapons({ weapons }) {
 
       const weaponsGroup = arrayOfWeapons.map((weapon, idx) => {
          return (
-            <div key={`weapon-${idx}`} className="center">
-               {weapon.displayName}
+            <div key={`weapon-${idx}`}>
+               <h3>{weapon.displayName}</h3>
                <p>
+                  <br></br>
                   <Link to={`/weapons/${weapon.uuid}`}>
                      <img className="weapons-img" src={weapon.displayIcon} alt={weapon.displayName} />
                   </Link>

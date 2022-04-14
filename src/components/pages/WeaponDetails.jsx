@@ -25,7 +25,7 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
          <br></br>
          
          SKINS
-         <div className="grid-container">
+         <div className="skins-container">
          {skinList}
          </div>
       </section>
