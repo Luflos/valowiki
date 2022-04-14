@@ -23,7 +23,7 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
          <h1 style={{marginBottom:30, marginTop:80}}>
          {weaponData.displayName} Skins
          </h1>
-         <div className="grid-container">
+         <div className="skins-container">
          {skinList}
          </div>
       </section>
