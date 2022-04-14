@@ -1,3 +1,5 @@
+@media only screen and (min-width: 700px) { 
+
 .grid-container {
    display: grid;
    grid-template-columns: auto auto auto;
@@ -19,3 +21,5 @@
    font-size: 30px;
    text-align: center;
  }
+
+}
