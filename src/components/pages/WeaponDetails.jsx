@@ -6,7 +6,7 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
       return (
          <div key={`skin-${idx}`}>
             <h3> {skin.displayName} </h3>
-               <img src={skin.chromas[0].fullRender} alt={skin.displayName} />
+               <img style ={{padding:"1.5rem"}}src={skin.chromas[0].fullRender} alt={skin.displayName} />
          </div>
       )
    })
@@ -33,7 +33,7 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
          <h1 style={{marginBottom:30, marginTop:80}}>
          {weaponData.displayName} Skins
          </h1>
-         <div className="skins-container">
+         <div className="skins-container" style={{padding: "3rem"}}>
          {skinList}
          </div>
       </section>
