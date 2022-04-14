@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import "../layout/Weapons.css"
 
 export default function Weapons({ weapons }) {
-   // console.log(weapons)
    const categories = new Map()
 
    for (let index = 0; index < weapons.length; index++) {
