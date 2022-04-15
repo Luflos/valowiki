@@ -5,9 +5,7 @@
     width: 50%
 }
 
-.border-p{
-    border: 2px solid red;
-}
+
 
 .container {
     width: 100%;
@@ -15,6 +13,17 @@
 }
 
 .lineUp-description {
-    width: 500px;
+    max-width: 600px;
     margin: 0 auto;
+}
+
+.lineup-link {
+    text-decoration: None;
+}
+
+.text-link {
+    padding: 10px;
+    font-weight: bold;
+    margin-right: 10px; 
+    font-size: 16px;
 }
