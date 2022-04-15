@@ -5,7 +5,10 @@ export default function AgentDetails({ agentData, abilityData }) {
       return (
          <div key={idx} className="abilities-div">
             <img className="ability-img" src={ability.displayIcon} alt= {`${ability.displayName}'s icon`}/>
-            <h2>{ability.displayName}</h2>
+            <h2>{ability.displayName}
+            <br></br>
+            {ability.slot}
+            </h2>
             <div className="desc-div">{ability.description} </div>
          </div>
       )
@@ -14,7 +17,7 @@ export default function AgentDetails({ agentData, abilityData }) {
    return (
       <div>
          <div className="agentDetails-Container center">
-            <h1>{agentData.displayName}</h1>
+            <h1 style={{fontSize:60}}>{agentData.displayName}</h1>
             <img
                src={agentData.background}
                alt={agentData.displayName}
@@ -27,7 +30,7 @@ export default function AgentDetails({ agentData, abilityData }) {
             />
             <p className="agent-desc">{agentData.description}</p>
          </div>
-         <h1 className="center">Abilities</h1>
+         <h1 className="center" style={{marginTop:50, marginBottom:20}}>Abilities</h1>
 
          <div className="abilities-container center">{abilities}</div>
       </div>

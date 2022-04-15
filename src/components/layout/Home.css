@@ -4,7 +4,7 @@
   }
   
   .valo-vid {
-    width: 50vw;
+    max-width: 50vw;
     margin: 20px;
   }
 
@@ -14,7 +14,7 @@
   }
 
   .container-h4 {
-    width: 1000px;
+    max-width: 900px;
     padding: 20px;
     margin: 20px;
     margin: 0 auto;

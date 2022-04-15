@@ -11,7 +11,7 @@ export default function Cypher() {
           alt="Cypher picture"
         />
       </div>
-      <h1 className="title center">Split Cypher Setups</h1>
+      <h1 className="title center">Cypher Setups</h1>
       <section className="layout">
         <ReactPlayer
           controls
