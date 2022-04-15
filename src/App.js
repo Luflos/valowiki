@@ -119,6 +119,7 @@ useEffect(() => {
         <Route 
           path='/contact'
           element={<Contact />}
+        />
 
         <Route
           path='/gameplay'
