@@ -20,6 +20,7 @@ import Sova from './components/pages/Sova';
 import Cypher from './components/pages/Cypher';
 import Contact from './components/pages/Contact';
 import Gameplay from './components/pages/Gameplay';
+import PageNotFound from './components/pages/PageNotFound';
 
 function App() {
   
@@ -126,6 +127,11 @@ useEffect(() => {
           element={<Gameplay />}
         />
             
+        <Route
+          path='*'
+          element={<PageNotFound />}  
+        />
+
       </Routes>
 
       <Footer />
