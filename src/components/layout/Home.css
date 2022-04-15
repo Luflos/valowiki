@@ -7,3 +7,19 @@
     width: 50vw;
     margin: 20px;
   }
+
+  .container-h1 {
+    padding: 3rem;
+    margin: 0 auto;
+  }
+
+  .container-h4 {
+    width: 800px;
+    padding: 20px;
+    margin: 20px;
+    margin: 0 auto;
+  }
+
+  h4 a {
+    color: #FC2B44;
+  }
