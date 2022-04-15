@@ -18,6 +18,7 @@ import Weapon from './components/pages/Weapon';
 import Lineups from './components/pages/Lineups';
 import Sova from './components/pages/Sova';
 import Cypher from './components/pages/Cypher';
+import Gameplay from './components/pages/Gameplay';
 
 function App() {
   
@@ -123,7 +124,13 @@ var config = {
           path='/lineups/cypher'
           element={<Cypher />}
         />
+
+        <Route 
+          path='/gameplay'
+          element={<Gameplay />}
+        />
       </Routes>
+
 
       <Footer />
     </Router>
