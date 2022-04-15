@@ -19,6 +19,7 @@ import Lineups from './components/pages/Lineups';
 import Sova from './components/pages/Sova';
 import Cypher from './components/pages/Cypher';
 import Contact from './components/pages/Contact';
+import Gameplay from './components/pages/Gameplay';
 
 function App() {
   
@@ -128,6 +129,11 @@ var config = {
         <Route 
           path='/contact'
           element={<Contact />}
+        />
+
+        <Route 
+          path='/gameplay'
+          element={<Gameplay />}
         />
       </Routes>
 

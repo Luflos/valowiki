@@ -36,7 +36,6 @@
 
 .nav-area ul li:hover a {
 	background-color: rgb(10,18,27);
-
 }
 .nav-area ul ul {
 	position: absolute;
@@ -45,6 +44,7 @@
 	display: none;
 	top: 100%;
 	left: 0;
+	z-index: 999;
 }
 .nav-area ul li:hover>ul {
 	display: block;
@@ -64,4 +64,8 @@
 }
 .padding-top {
    padding-top: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+	
 }
