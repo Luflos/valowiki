@@ -14,12 +14,13 @@ export default function AgentDetails ({agentData, abilityData}) {
     return (
         <div className="agentDetails-Container">
             <h1>{agentData.displayName}</h1>
-            <img src={agentData.background} alt={agentData.displayName}/>
-            <img src={agentData.fullPortraitV2} alt={agentData.displayName} />
+            <img src={agentData.background} alt={agentData.displayName} className="imageOne image"/>
+            <img src={agentData.fullPortraitV2} alt={agentData.displayName} className="imageTwo image"/>
             <p>{agentData.description}</p>
             
             <h1>Abilities</h1>
             {abilities}
+            
         </div>
     )
 }

@@ -11,63 +11,63 @@ export default function Cypher() {
          />
 
          <div>
-            <h2>Split Cypher Setups</h2>
+            <h1 className="title">Split Cypher Setups</h1>
 
-            <h3>B Setup</h3>
+            <h3 className="lineUpTitle">B Setup</h3>
             <div>
-               <ReactPlayer controls url="https://youtu.be/_kgwebcpdxw" />
+               <ReactPlayer controls url="https://youtu.be/_kgwebcpdxw" className='react-player'/>
             </div>
 
-            <h3>A Setup</h3>
+            <h3 className="lineUpTitle">A Setup</h3>
             <div>
-               <ReactPlayer controls url="https://youtu.be/FCCmm8oKYWg" />
+               <ReactPlayer controls url="https://youtu.be/FCCmm8oKYWg" className='react-player' />
             </div>
 
-            <h3>Early A Info Camera</h3>
+            <h3 className="lineUpTitle">Early A Info Camera</h3>
             <div>
-               <ReactPlayer controls url="https://youtu.be/VoGf5qwZL8Y" />
+               <ReactPlayer controls url="https://youtu.be/VoGf5qwZL8Y" className='react-player'/>
             </div>
 
-            <h3>A Camera</h3>
+            <h3 className="lineUpTitle">A Camera</h3>
             <div>
-               <ReactPlayer controls url="https://youtu.be/0L2XcIRMdSE" />
+               <ReactPlayer controls url="https://youtu.be/0L2XcIRMdSE" className='react-player'/>
             </div>
 
-            <h3>A Camera #2</h3>
+            <h3 className="lineUpTitle">A Camera #2</h3>
             <div>
-               <ReactPlayer controls url="https://youtu.be/1_sar7p-IHk" />
+               <ReactPlayer controls url="https://youtu.be/1_sar7p-IHk" className='react-player'/>
             </div>
 
             <div>
-               <h2>Bind Cypher Setups</h2>
+               <h1 className="title">Bind Cypher Setups</h1>
 
-               <h3>B Setup</h3>
+               <h3 className="lineUpTitle">B Setup</h3>
                <div>
-                  <ReactPlayer controls url="https://youtu.be/k4vnsdNBEu8" />
+                  <ReactPlayer controls url="https://youtu.be/k4vnsdNBEu8" className='react-player'/>
                </div>
 
-               <h3>A Setup</h3>
+               <h3 className="lineUpTitle">A Setup</h3>
                <div>
-                  <ReactPlayer controls url="https://youtu.be/jHMsLL9HgOY" />
+                  <ReactPlayer controls url="https://youtu.be/jHMsLL9HgOY" className='react-player'/>
                </div>
             </div>
 
             <div>
-               <h2>Fracture Cypher Setups</h2>
+               <h1 className="title">Fracture Cypher Setups</h1>
 
-               <h3>B Setup</h3>
+               <h3 className="lineUpTitle">B Setup</h3>
                <div>
-                  <ReactPlayer controls url="https://youtu.be/TFteb9A_63c" />
+                  <ReactPlayer controls url="https://youtu.be/TFteb9A_63c" className='react-player'/>
                </div>
 
-               <h3>A Setup</h3>
+               <h3 className="lineUpTitle">A Setup</h3>
                <div>
-                  <ReactPlayer controls url="https://youtu.be/4xppZMixd0s" />
+                  <ReactPlayer controls url="https://youtu.be/4xppZMixd0s" className='react-player'/>
                </div>
 
-               <h3>B Main One Way</h3>
+               <h3 className="lineUpTitle">B Main One Way</h3>
                <div>
-                  <ReactPlayer controls url="https://youtu.be/T_e9Ocxrigk" />
+                  <ReactPlayer controls url="https://youtu.be/T_e9Ocxrigk" className='react-player'/>
                </div>
             </div>
          </div>

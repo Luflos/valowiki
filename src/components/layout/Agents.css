@@ -1,0 +1,35 @@
+.agent-img {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.roleContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: row;
+    grid-template-columns: auto;
+
+}
+
+.roleDiv {
+    border: 1px solid white;
+    padding: 10px;
+    margin: 5px;
+}
+
+.agentContainer{
+    display: inline-flex;
+    width: 10%;
+    justify-content: space-evenly;
+    flex-direction: row;
+    grid-template-columns: auto;
+    border: 1px solid white;
+}
+
+.agentIcon {
+    width: 100px;
+    height: 100px;
+}
+

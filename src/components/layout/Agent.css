@@ -1,65 +1,65 @@
 .agentContainer {
-    background-color: rgb(10,18,27);
-    color: white;
-    text-align: center;
+  background-color: rgb(10,18,27);
+  color: white;
+  text-align: center;
 }
 
 .wrapper {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* flex-wrap: wrap; */
-    margin: 20px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  margin: 20px;
 }
 
 .card {
-  /* Add shadows to create the "card" effect */
-  transition: 0.3s;
-  display: flex;
-  flex-direction: row;
-  border: 1px solid white;
-  width: 220px;
+/* Add shadows to create the "card" effect */
+transition: 0.3s;
+display: flex;
+flex-direction: row;
+border: 1px solid white;
+width: 220px;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 /* Add some padding inside the card container */
 .container {
-  padding: 2px 16px;
+padding: 2px 16px;
 }
 
 .card__image {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .agent-link {
-    color: red;
-    text-decoration: none;
-    padding-bottom: 2px;
+  color: red;
+  text-decoration: none;
+  padding-bottom: 2px;
 }
 
 .roleContainer {
-  width: 50%;
-  height: 50%;
-  float: left;
-  border: 1px solid white;
-  padding: 24px;
-  margin: 53px;
+width: 50%;
+height: 50%;
+float: left;
+border: 1px solid white;
+padding: 24px;
+margin: 53px;
 }
 
 .agentTitle{
-  padding: 10px;
+padding: 10px;
 }
 
 .roleName {
-  color: red;
-  padding: 3px;
+color: red;
+padding: 3px;
 }
 
 .agent-img {
-  width: 60vw;
+width: 60vw;
 }

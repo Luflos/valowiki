@@ -1,4 +1,5 @@
 .agentDetails-Container{
     background-color: rgb(10,18,27);
     color: white;
+    position: relative;
 }
