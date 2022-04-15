@@ -41,7 +41,7 @@ An application that allows people to learn more in depth about their favorite Va
 | GET         | /weapons/:id      | Show (read) |  Detail page for a single weapon and showcase of skins
 
 ## Wireframes / Planning
----
+
 <details>
     <summary>Initial Planning</summary>
 
@@ -60,7 +60,7 @@ An application that allows people to learn more in depth about their favorite Va
 </details>
 
 ## Final Design
----
+
 <details>
     <summary>Screenshots</summary>
 
