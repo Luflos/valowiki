@@ -3,8 +3,8 @@ import "../layout/AgentDetails.css"
 export default function AgentDetails({ agentData, abilityData }) {
    const abilities = abilityData.map((ability, idx) => {
       return (
-         <div key={idx} className="center ">
-            <img src={ability.displayIcon} alt="skill icon" />
+         <div key={idx} className="abilities-div">
+            <img className="ability-img" src={ability.displayIcon} alt= {`${ability.displayName}'s icon`}/>
             <h2>{ability.displayName}</h2>
             <div className="desc-div">{ability.description} </div>
          </div>
@@ -18,19 +18,18 @@ export default function AgentDetails({ agentData, abilityData }) {
             <img
                src={agentData.background}
                alt={agentData.displayName}
-               className="agent-detail-img"
+               className="agent-name-img"
             />
             <img
                src={agentData.fullPortraitV2}
                alt={agentData.displayName}
                className="agent-detail-img"
             />
-            <p>{agentData.description}</p>
+            <p className="agent-desc">{agentData.description}</p>
          </div>
-         <h1 className=" center">Abilities</h1>
-         <div className="abilities-div">
-            <div className="abilities-container"> {abilities}</div>
-         </div>
+         <h1 className="center">Abilities</h1>
+
+         <div className="abilities-container center">{abilities}</div>
       </div>
    )
 }
