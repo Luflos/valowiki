@@ -8,6 +8,7 @@ export default function MapDetails({ mapData }) {
             <div>
                <img className="map-imgs" src={mapData.splash} alt={mapData.displayName} />
                {/* <img className= 'rotate' src={mapData.displayIcon} alt={mapData.displayName} /> */}
+               <h2>Call outs for {mapData.displayName}</h2>
                { mapData.displayName === 'Ascent' ? <img className="map-imgs" src='../images/maps/ascent-map.png' alt={mapData.displayName} /> : '' }
                { mapData.displayName === 'Split' ? <img className="map-imgs" src='../images/maps/split-map.png' alt={mapData.displayName} /> : '' }
                { mapData.displayName === 'Fracture' ? <img className="map-imgs" src='../images/maps/fracture-map.png' alt={mapData.displayName} /> : '' }
