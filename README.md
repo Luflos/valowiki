@@ -3,7 +3,7 @@
 An application that allows people to learn more in depth about their favorite Valorant agents while also becoming better players at the same time. The app showcases agents, maps, and some tips and tricks as well. 
 
 ## Deployment Link
-- tbd
+[Valowiki](https://valowiki.herokuapp.com/)
 
 ## Installation Instructions
 - Fork and clone the code and run `npm i` 
