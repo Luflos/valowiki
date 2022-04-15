@@ -14,15 +14,23 @@
 }
 
 .weapons-h2 {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  /* padding-top: 4rem; */
+  padding: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-bottom: 3px solid #FC2B44;
+  display: inline-block;
 }
 
 .weapons-div {
-  padding: 0rem 40rem 5rem 40rem;
+  /* padding: 0rem 40rem 5rem 40rem; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+  gap: 20px;
+  /* padding: 0rem 20rem 5rem 20rem; */  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .weapons-img {
