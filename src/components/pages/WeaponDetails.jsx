@@ -14,9 +14,9 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
    return (
       <section className="center">
          <h1 style={{marginBottom:30}}>{weaponData.displayName}</h1>
-         <div className="spec-weapon">
-            <img src={weaponData.displayIcon} alt={weaponData.displayName} />
-            <div className="overlay fade-overlay">
+         <div className="container">
+            <img className= 'wep-img' src={weaponData.displayIcon} alt={weaponData.displayName} />
+            <div className="middle">
                <div className="text">
 
                {weaponShop === null ? "" : <p>Category: {weaponShop.category} <br></br> Price: {weaponShop.cost} Creds</p>}
