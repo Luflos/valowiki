@@ -1,8 +1,13 @@
-.footer {
+  .footer{
+    /* margin-top: 1rem;
+    padding: 1rem; */
+    /* background-color: rgb(235, 195, 64); */
     position: static;
     bottom: 0;
     left: 0;
-    right: 0;
-    text-align: center;
+    width: 100%;
+  }
+
 }
+
   
