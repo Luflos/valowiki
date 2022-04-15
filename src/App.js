@@ -18,6 +18,7 @@ import Weapon from './components/pages/Weapon';
 import Lineups from './components/pages/Lineups';
 import Sova from './components/pages/Sova';
 import Cypher from './components/pages/Cypher';
+import Contact from './components/pages/Contact';
 import Gameplay from './components/pages/Gameplay';
 
 function App() {
@@ -26,8 +27,6 @@ function App() {
   const [agents, setAgents] = useState([])
   const [gameMaps, setGameMaps] = useState([])
   const [weapons, setWeapons] = useState([])
-  const [news, setNews] = useState([])
-
 
   // useEffect to get agent data from the Valorant API
 useEffect(() => {
@@ -61,14 +60,6 @@ useEffect(() => {
       console.log(error)
     })
 }, [] )
-
-var config = {
-  method: 'get',
-  url: 'https://vlrggapi.herokuapp.com/news',
-  headers: {
-    'accept': 'application/json'
-  }
-}
 
   return (
     <Router>
@@ -126,11 +117,15 @@ var config = {
         />
 
         <Route 
+          path='/contact'
+          element={<Contact />}
+
+        <Route
           path='/gameplay'
           element={<Gameplay />}
         />
+            
       </Routes>
-
 
       <Footer />
     </Router>

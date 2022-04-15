@@ -38,15 +38,21 @@
   padding-bottom: 4rem;
 }
 
-/* weapons detail */
 .skins-container {
-  /* display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: rgb(10,18,27);
-  padding: 10px; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+}
+
+.skins-text {
+  font-size: 40px;
+  margin: 50px 0 10px 0;
+}
+
+.wep-text {
+  font-size: 50px;
+  margin-bottom: 30px;
 }
