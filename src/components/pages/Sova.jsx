@@ -7,8 +7,8 @@ export default function Sova() {
          <div className="center">
             <img 
                className="agent-imgs"
-               src="https://wallpaperaccess.com/full/3779849.jpg"
-               alt="Sova pic"
+               src="../../../images/sovapic.jpeg"
+               alt="Sova picture"
             />
          </div>
          <h1 className="title center">Sova Line Ups</h1>

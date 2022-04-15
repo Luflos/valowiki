@@ -7,8 +7,8 @@ export default function Cypher() {
       <div className="center">
         <img
           className="agent-imgs"
-          src="https://wallpx.com/image/2022/03/valorant-cypher-camera-agents-artwork.jpg"
-          alt="Cypher"
+          src="../../../images/cypher.jpeg"
+          alt="Cypher picture"
         />
       </div>
       <h1 className="title center">Split Cypher Setups</h1>
