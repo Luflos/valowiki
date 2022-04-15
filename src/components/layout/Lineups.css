@@ -8,13 +8,18 @@
    margin-left: auto;
    margin-right: auto;
    border: 2px solid white;
+   margin-top: 20px;
+ }
+
+
+ .layout{
+   display: flex;
+   width: 100%;
+   flex-wrap: wrap;
+   flex-direction: row;
  }
 
  .title {
-   padding: 15px;
- }
-
-
- .lineUpTitle {
    padding: 10px;
+   padding-bottom: 15px;
  }
