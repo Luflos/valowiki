@@ -8,3 +8,13 @@
 .border-p{
     border: 2px solid red;
 }
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+.lineUp-description {
+    width: 500px;
+    margin: 0 auto;
+}
