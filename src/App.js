@@ -120,7 +120,7 @@ useEffect(() => {
           path='/contact'
           element={<Contact />}
         />
-
+        
         <Route
           path='/gameplay'
           element={<Gameplay />}

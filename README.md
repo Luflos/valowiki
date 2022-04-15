@@ -6,17 +6,27 @@ An application that allows people to learn more in depth about their favorite Va
 - tbd
 
 ## Installation Instructions
-- tbd
+- Fork and clone the code and run `npm i` 
+  <details>
+    <summary> NPM </summary>
 
-## Planning Tools / 
+    - axios
+    - react
+    - react-dom
+    - react-icons
+    - react-player
+    - react-router-dom
+
+  </details>
+
+## Planning Tools
 * Figma
 * Trello
 
 ## Tech Used
 * React
 * Axios
-* Tailwind CSS
-
+* CSS
 
 ## Routes
 | **HTTP Verb**| **URL** |  **Action**| **Description**
@@ -24,9 +34,11 @@ An application that allows people to learn more in depth about their favorite Va
 | GET        | /      | Index (read)  | Homepage
 | GET         | /agents       |  Show (read) |  List of all Agents
 | GET     | /agents/:id |  Show (read)    | Details pages for specific agent
-| GET     | /agents/:id/lineups | Show (read) | Display agent lineups
+| GET     | /lineups | Show (read) | Display agent lineups
 | GET     | /maps | Show (read)    | List of all maps
 | GET         | /maps/:id      | Show (read) |  Details pages for specific maps
+| GET     | /weapons | Show (read)    | List of all weapons organized by category
+| GET         | /weapons/:id      | Show (read) |  Detail page for a single weapon and showcase of skins
 
 ## Wireframes / Planning
 ---
@@ -47,18 +59,40 @@ An application that allows people to learn more in depth about their favorite Va
 
 </details>
 
+## Final Design
+---
+<details>
+    <summary>Screenshots</summary>
+
+![Home](./public/images/final/homepage.jpg)
+
+![Agent-List](./public/images/final/agents.jpg)
+
+![Jett](./public/images/final/jett.jpg)
+
+![Maps](./public/images/final/maps.jpg)
+
+![Icebox](./public/images/final/icebox.jpg)
+
+![Sova lineup](./public/images/final/lineups.png)
+
+</details>
+
 ## MVP
-- [] Homepage that shows a description of the game / app 
-- [] Navbar that directs to agents + maps
-- [] List of agents on agents page 
-- [] Detailed information about certain agents on their specific page / gameplay hints
-- [] Maps page showcasing different maps / hints
+- [X] Homepage that shows a description of the game / app 
+- [X] Navbar that directs to agents + maps
+- [X] List of agents on agents page 
+- [X] Detailed information about certain agents on their specific page
+- [X] Maps page showcasing different maps / callouts
 
 ## Stretch Goals
 - [] Details page for all Agents
 - [] Details page for all maps
-- [] Weapons skins tab that showcases all the various weapon skins
+- [X] Weapons skins tab that showcases all the various weapon skins
 
 ## Resources
     
 - [API](https://dash.valorant-api.com/)
+- Youtube
+- Fontawesome
+- Riot Games (All characters and assets belong to Riot Games)
