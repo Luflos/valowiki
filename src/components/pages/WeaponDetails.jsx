@@ -42,16 +42,6 @@ export default function WeaponDetails({ weaponData, weaponStats, weaponShop, wea
             </div>
          </div>
 
-         {/* <img src={weaponData.displayIcon} alt={weaponData.displayName} />
-         
-               {weaponShop === null ? "" : <p>Category: {weaponShop.category} <br></br> Price: {weaponShop.cost} Creds</p>}
-   
-                {weaponStats === null ? "" : <p>Fire Rate: {weaponStats.fireRate} <br></br> Magazine Size: {weaponStats.magazineSize}</p>} */}
-
-         {/* {weaponShop === null ? "" : <p>Category: {weaponShop.category} <br></br> Price: {weaponShop.cost} Creds</p>}
-   
-         {weaponStats === null ? "" : <p>Fire Rate: {weaponStats.fireRate} <br></br> Magazine Size: {weaponStats.magazineSize}</p>} */}
-
          <h1 className="skins-text">Skins</h1>
          <div className="skins-container">{skinList}</div>
       </section>

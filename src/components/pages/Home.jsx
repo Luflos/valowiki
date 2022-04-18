@@ -17,8 +17,11 @@ export default function Home() {
                </video>
 
             </div>
+
+            <div className="container-small">
             <small style={{marginTop:20}}> Valowiki isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. 
             Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</small>
+            </div>
          </div>
       </div>
    )
