@@ -4,9 +4,8 @@ import "../layout/Lineup-page.css";
 export default function Lineups() {
    return (
       <>
-         <div>
-            <h1 className="center">Lineups</h1>
-            <img className="image-gif" src="https://media.giphy.com/media/Z5HVfEvnxr67u/giphy.gif" alt="lineup gif" />
+         <div className="center">
+            <img className="image-gif" src="images/Sova-Lineups.jpg" alt="lineup" />
          </div>
          <div className="container center">
                <h3 style={{padding: 10}}>What are Lineups?</h3>

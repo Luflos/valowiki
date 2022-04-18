@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../layout/Navbar.css";
 
 export default function Navbar() {
