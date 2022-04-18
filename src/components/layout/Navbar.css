@@ -1,4 +1,4 @@
-* {
+/* * {
    background-color: rgb(10,18,27);
 }
 
@@ -50,7 +50,7 @@
 	display: block;
 }
 .nav-area ul ul li:hover a {
-	background-color: #FC2B44;
+	/* background-color: #FC2B44; */
 }
 .nav-area ul ul li {
 	position: relative;
@@ -64,4 +64,9 @@
 }
 .padding-top {
    padding-top: 0.5rem;
+}
+
+
+@media screen and (max-width: 500px){
+
 }
