@@ -1,14 +1,13 @@
-   .maps-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      height: 80vh;
-      margin: 10rem;
-      max-width: 100%;
-   }
+.maps-container {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   margin: 10rem 0 10rem 0;
+   max-width: 100%;
+}
 
-   .map-imgs {
-      max-width: 90%;
-      height:auto;
-   }
-
+.map-imgs {
+   max-width: 90%;
+   height: auto;
+}
