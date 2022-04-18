@@ -22,7 +22,7 @@ export default function Lineups() {
 
             <div style={{ margin: 30 }}>
                <button className="text-link"><Link to="/lineups/sova" className="lineup-link">Sova Lineups</Link></button>
-               <button className="text-link"><Link to="/lineups/cypher" className="lineup-link">Cypher Lineups/Setups</Link></button>
+               <button className="text-link"><Link to="/lineups/cypher" className="lineup-link">Cypher Lineups</Link></button>
             </div>
          </div>
       </>
