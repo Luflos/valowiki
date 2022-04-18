@@ -2,8 +2,9 @@
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      height: 60vh;
+      height: 80vh;
       margin: 10rem;
+      max-width: 100%;
    }
 
    .map-imgs {
