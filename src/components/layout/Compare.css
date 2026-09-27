@@ -1,0 +1,148 @@
+.compare-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.compare-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.compare-field > span {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+}
+
+.compare-select {
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: border-color var(--ease);
+}
+
+.compare-select:hover { border-color: var(--text-dim); }
+.compare-select:focus { outline: none; border-color: var(--val-red); }
+
+/* --------------------------------------------------------------------------
+   Weapon cards
+   -------------------------------------------------------------------------- */
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+}
+
+.compare-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+/* Static comparison surface - no hover lift, nothing to click through to. */
+.compare-card:hover {
+  transform: none;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.compare-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.compare-card-head h2 { color: var(--text); font-size: 1.5rem; }
+
+.compare-art {
+  height: 90px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.compare-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.compare-stats dt {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}
+
+.compare-stats dd {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   TTK table
+   -------------------------------------------------------------------------- */
+.compare-table-wrap { overflow-x: auto; }
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: var(--space-3);
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.compare-table thead th {
+  color: var(--text);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.compare-subhead th {
+  font-size: 0.65rem !important;
+  color: var(--text-dim) !important;
+  letter-spacing: 0.1em;
+}
+
+.compare-table tbody th { text-align: left; color: var(--text); }
+
+.compare-table .is-best {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Marks the faster weapon without relying on colour alone. */
+.compare-table .is-best::after {
+  content: ' \25C0';
+  color: var(--val-red);
+  font-size: 0.7em;
+}
+
+.compare-note {
+  margin: var(--space-4) 0 var(--space-16);
+  font-size: 0.82rem;
+  max-width: 70ch;
+}

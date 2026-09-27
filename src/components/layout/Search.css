@@ -1,0 +1,71 @@
+.search-page-form { margin-bottom: var(--space-12); }
+
+.search-page-form .search-input {
+  width: 100%;
+  max-width: 640px;
+}
+
+.search-group { margin-bottom: var(--space-16); }
+
+.search-group .section-title small {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.search-hit {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  color: inherit;
+}
+
+.search-hit-art {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.search-hit-art.is-loaded { background: var(--bg); }
+
+.search-hit-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.search-hit-body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.search-hit-body h3 {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.25;
+  transition: color var(--ease);
+  /* Skin names run long; keep rows even. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-hit:hover .search-hit-body h3 { color: var(--val-red); }
+
+.search-hit-body span {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+}

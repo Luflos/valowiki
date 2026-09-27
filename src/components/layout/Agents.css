@@ -9,7 +9,7 @@
     width: 100%;
     justify-content: space-evenly;
     flex-direction: row;
-    grid-template-columns: auto;
+    grid-template-rows: auto;
 
 }
 

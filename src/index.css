@@ -1,52 +1,372 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Oxygen:wght@400;700&display=swap');
 
-*, *::before, *::after {
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+:root {
+  /* Data-visualisation series. These are the dataviz default categorical
+     slots 1 and 2, stepped for a dark surface, and validated against
+     --surface (#1a242d): CVD dE 26.8, normal-vision dE 31.8, contrast >= 3:1.
+     Kept distinct from --val-red so brand accent never reads as a series. */
+  --series-1: #3987e5;
+  --series-2: #d95926;
+
+  /* Brand */
+  --val-red: #ff4655;
+  --val-red-dark: #d13343;
+
+  /* Surfaces, darkest to lightest */
+  --bg: #0f1923;
+  --surface: #1a242d;
+  --surface-hi: #22303b;
+  --line: #2b3945;
+
+  /* Text */
+  --text: #ece8e1;
+  --text-dim: #8b978f;
+
+  /* Type */
+  --font-display: 'Fjalla One', 'Impact', sans-serif;
+  --font-body: 'Oxygen', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --radius: 4px;
+  --radius-lg: 8px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-hi: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --ease: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --sidebar-width: 260px;
+  --topbar-height: 56px;
+  --page-max: 1400px;
+}
+
+/* ==========================================================================
+   Reset
+   NOTE: background-color deliberately lives on body, not on `*`. Painting it
+   on every element (and pseudo-element) flattens cards, hovers and gradients.
+   ========================================================================== */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(10,18,27);
-  color: white;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h3 { font-size: clamp(1.15rem, 2vw, 1.5rem); }
+
+p { color: var(--text-dim); }
+
+a {
+  color: var(--val-red);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+a:hover { color: var(--text); }
+
+button { font-family: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--val-red);
+  outline-offset: 3px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* SCROLLBAR styling */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 100vh;
-  background: #1F2937;
-}
-
+/* ==========================================================================
+   Scrollbar
+   ========================================================================== */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(rgb(134, 239, 172), rgb(59,130,246), rgb(147,51,234))
+  background: var(--line);
+  border-radius: 100vh;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--val-red); }
+
+/* Visible only once focused, so keyboard users can bypass the sidebar. */
+.skip-link {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 300;
+  padding: var(--space-3) var(--space-6);
+  background: var(--val-red);
+  color: #fff;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: translateY(-200%);
+  transition: transform var(--ease);
 }
 
-/* Universal Styling */
-.center {
+.skip-link:focus {
+  transform: translateY(0);
+  color: #fff;
+}
+
+/* The skip target shouldn't draw a focus ring when moved to programmatically. */
+.app-main:focus { outline: none; }
+
+/* ==========================================================================
+   App shell: content sits to the right of the fixed sidebar
+   ========================================================================== */
+.app-main {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main > .footer { margin-top: auto; }
+
+@media (max-width: 900px) {
+  .app-main { margin-left: 0; }
+}
+
+/* ==========================================================================
+   Layout primitives
+   ========================================================================== */
+.page {
+  /* width:100% is required: `margin:0 auto` on a column flex item overrides
+     align-items:stretch, which would otherwise shrink this to fit-content. */
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6) var(--space-16);
+}
+
+/* Section heading with the angled red keyline Valorant uses. */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--val-red), transparent);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--val-red);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: var(--space-3) var(--space-8);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: background var(--ease), border-color var(--ease), color var(--ease),
+    transform var(--ease);
+}
+
+.btn:hover {
+  border-color: var(--val-red);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--val-red);
+  border-color: var(--val-red);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--val-red-dark);
+  border-color: var(--val-red-dark);
+  color: #fff;
+}
+
+/* A low-emphasis, repeatable action sitting under a grid - so it borrows the
+   red-on-tinted-surface language of the tags and site badges rather than the
+   off-white of .btn, which reads as unstyled across a wide empty row. */
+.btn-more {
+  background: rgba(255, 70, 85, 0.08);
+  border-color: rgba(255, 70, 85, 0.45);
+  color: var(--val-red);
+}
+
+.btn-more:hover {
+  background: var(--val-red);
+  border-color: var(--val-red);
+  color: #fff;
+}
+
+/* Wrapper for a "Load more" control and its remaining-count caption. Shared by
+   the bundle list and the weapon skin grid. */
+.load-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-12);
+}
+
+.load-more span {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--val-red);
+  box-shadow: var(--shadow-hi);
+}
+
+/* ==========================================================================
+   Filter bar: search field + role/category chips
+   ========================================================================== */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.search-input {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color var(--ease);
+}
+
+.search-input::placeholder { color: var(--text-dim); }
+.search-input:focus {
+  outline: none;
+  border-color: var(--val-red);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 100vh;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: color var(--ease), border-color var(--ease), background var(--ease);
+}
+
+.chip:hover {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--val-red);
+  border-color: var(--val-red);
+  color: #fff;
+}
+
+.chip-count {
+  opacity: 0.7;
+  margin-left: var(--space-1);
+}
+
+.result-count {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+.empty-state {
+  padding: var(--space-16) var(--space-4);
   text-align: center;
+  color: var(--text-dim);
 }
 
-.rotate {
-  transform: rotate(90deg);
-}
-
+/* ==========================================================================
+   Utilities (kept: used across existing pages)
+   ========================================================================== */
+.center { text-align: center; }
+.rotate { transform: rotate(90deg); }
 .background-color {
-  background-color: rgb(10,18,27);
-  color: white;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

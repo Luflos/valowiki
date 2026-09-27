@@ -1,0 +1,29 @@
+.lazy-frame {
+  position: relative;
+  overflow: hidden;
+  /* Shares the skeleton shimmer defined in DataState.css. */
+  background: linear-gradient(
+      90deg,
+      var(--surface-hi) 25%,
+      var(--line) 37%,
+      var(--surface-hi) 63%
+    )
+    0 0 / 400% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.lazy-frame.is-loaded {
+  background: none;
+  animation: none;
+}
+
+.lazy-frame img {
+  opacity: 0;
+  transition: opacity var(--ease), transform var(--ease);
+}
+
+.lazy-frame.is-loaded img { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lazy-frame { background: var(--surface-hi); animation: none; }
+}

@@ -1,0 +1,127 @@
+.mapdetail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.mapdetail-figure {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+/* The callouts are positioned as percentages of this box, so it has to hug
+   the minimap image exactly. */
+.mapdetail-canvas {
+  position: relative;
+  line-height: 0;
+}
+
+.mapdetail-canvas img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.callout {
+  position: absolute;
+  /* left/top mark the callout's point, so shift the marker onto it. */
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.callout-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--val-red);
+  box-shadow: 0 0 0 2px rgba(15, 25, 35, 0.85);
+  transition: transform var(--ease);
+}
+
+.callout-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.callout:hover .callout-dot,
+.callout.is-active .callout-dot {
+  transform: scale(1.5);
+  background: var(--text);
+}
+
+.callout.is-active .callout-label { color: var(--val-red); }
+
+.mapdetail-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Callout index
+   -------------------------------------------------------------------------- */
+.mapdetail-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.mapdetail-side {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--val-red);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--space-2);
+}
+
+.mapdetail-list ul { list-style: none; }
+
+.mapdetail-list button {
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 0.88rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--ease), border-color var(--ease), background var(--ease);
+}
+
+.mapdetail-list button:hover,
+.mapdetail-list button.is-active {
+  color: var(--text);
+  border-left-color: var(--val-red);
+  background: var(--surface-hi);
+}
+
+@media (max-width: 900px) {
+  .mapdetail-layout { grid-template-columns: 1fr; }
+  .mapdetail-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}

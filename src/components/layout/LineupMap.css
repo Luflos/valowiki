@@ -1,0 +1,110 @@
+.lineup-map {
+   position: sticky;
+   top: var(--space-6);
+   background: var(--surface);
+   border: 1px solid var(--line);
+   border-radius: var(--radius-lg);
+   padding: var(--space-4);
+}
+
+.lineup-map.is-empty {
+   display: grid;
+   place-items: center;
+   min-height: 280px;
+   color: var(--text-dim);
+}
+
+.lineup-map-frame {
+   position: relative;
+   line-height: 0;
+}
+
+.lineup-map-frame img {
+   width: 100%;
+   height: auto;
+   border-radius: var(--radius);
+}
+
+.lineup-map-frame.is-placing {
+   cursor: crosshair;
+   outline: 2px dashed var(--val-red);
+   outline-offset: 3px;
+}
+
+/* Context labels - recessive, so the line-up pins read first. */
+.lineup-map-callout {
+   position: absolute;
+   transform: translate(-50%, -50%);
+   font-size: 0.58rem;
+   letter-spacing: 0.04em;
+   color: var(--text-dim);
+   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+   pointer-events: none;
+   white-space: nowrap;
+   opacity: 0.75;
+}
+
+.lineup-map-line {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+   overflow: visible;
+}
+
+.lineup-map-line line {
+   stroke: var(--text-dim);
+   stroke-width: 0.5;
+   stroke-dasharray: 2 2;
+   vector-effect: non-scaling-stroke;
+}
+
+.lineup-map-line line.is-active {
+   stroke: var(--val-red);
+   stroke-width: 1;
+}
+
+.lineup-map-pin {
+   position: absolute;
+   transform: translate(-50%, -50%);
+   width: 24px;
+   height: 24px;
+   display: grid;
+   place-items: center;
+   border-radius: 50%;
+   background: var(--bg);
+   border: 2px solid var(--val-red);
+   color: var(--val-red);
+   font-family: var(--font-display);
+   font-size: 0.75rem;
+   line-height: 1;
+   cursor: pointer;
+   transition: transform var(--ease), background var(--ease), color var(--ease);
+}
+
+.lineup-map-pin:hover { transform: translate(-50%, -50%) scale(1.15); }
+
+.lineup-map-pin.is-active {
+   background: var(--val-red);
+   color: #fff;
+   transform: translate(-50%, -50%) scale(1.2);
+}
+
+.lineup-map-foot {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: var(--space-3);
+   margin-top: var(--space-4);
+   font-size: 0.75rem;
+   color: var(--text-dim);
+}
+
+.lineup-map-arming {
+   color: var(--val-red);
+   font-family: var(--font-display);
+   text-transform: uppercase;
+   letter-spacing: 0.14em;
+   font-size: 0.68rem;
+}

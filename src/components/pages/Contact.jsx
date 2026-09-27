@@ -1,60 +1,35 @@
 import "../layout/Contact.css"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { asset } from "../../utils/asset";
 
 export default function Contact() {
   return (
     <>
-      <div className="center" src="blue-gradient.jpeg">
-        <h1>Meet the Devs!</h1>
-        <h5 className="descriptionApp">
-          Forced to meet through GA
-        </h5>
-        </div>
-      <main className="cards-contact team-title">
+      <div className="page">
+        <header className="page-head center">
+          <span className="eyebrow">ValoREF</span>
+          <h1>Meet the team</h1>
+        </header>
+        <main className="cards-contact">
         <article className="card-contact">
-          <img src="images/clair.png" alt="Photo of Clair" />
-          <div className="text">
-            <h3>Clair Choo</h3>
-            <p className="inner-text">What is Valorant....</p>
-            <a href="https://github.com/clairxc" target="_blank">
-              <FaGithub size={30}/>
-            </a>
-            <a href="https://www.linkedin.com/in/clair-choo/" target="_blank">
-              <FaLinkedin size={30}/>
-            </a>
-          </div>
-        </article>
-        <article className="card-contact">
-          <img src="images/sol.jpg" alt="Photo of Sol" />
-          <div className="text">
-            <h3>Sol Youn</h3>
-            <p className="inner-text">
-            Valorant is okay...
-            </p>
-            <a href="https://github.com/Luflos" target="_blank">
-              <FaGithub size={30}/>
-            </a>
-            <a href="https://www.linkedin.com/in/sol-youn/" target="_blank">
-              <FaLinkedin size={30}/>
-            </a>
-          </div>
-        </article>
-        <article className="card-contact">
-          <img src="images/brian.jpg" alt="Photo of Brian" />
+          <img src={asset("images/brian.jpg")} alt="Brian Lee" />
           <div className="text">
             <h3>Brian Lee</h3>
             <p className="inner-text">
-            I WAS Radiant...
+            I am a Full Stack Web Developer based in Los Angeles who is inspired to provide creative solutions to open ended problems and driven to master his craft. With my experience in the social service industry, I am confident on how adaptable I am working under any environment while being able to provide exceptional communication and feedback to my team members.
             </p>
-            <a href="https://github.com/br1anlee" target="_blank">
-              <FaGithub size={30}/>
-            </a>
-            <a href="https://www.linkedin.com/in/brianjoonmolee/" target="_blank">
-              <FaLinkedin size={30}/>
-            </a>
+            <div className="card-socials">
+              <a href="https://github.com/br1anlee" target="_blank" rel="noreferrer">
+                <FaGithub size={30}/>
+              </a>
+              <a href="https://www.linkedin.com/in/brianjoonmolee/" target="_blank" rel="noreferrer">
+                <FaLinkedin size={30}/>
+              </a>
+            </div>
           </div>
         </article>
-      </main>
+        </main>
+      </div>
     </>
   )
 }

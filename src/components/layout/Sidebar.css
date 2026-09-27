@@ -1,0 +1,251 @@
+/* --------------------------------------------------------------------------
+   Mobile top bar - only visible once the sidebar goes off-canvas
+   -------------------------------------------------------------------------- */
+.topbar { display: none; }
+
+.topbar-burger {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.topbar-burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  transition: transform var(--ease), opacity var(--ease);
+}
+
+.topbar-burger[aria-expanded='true'] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.topbar-burger[aria-expanded='true'] span:nth-child(2) { opacity: 0; }
+.topbar-burger[aria-expanded='true'] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.topbar-brand,
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.topbar-brand img { width: 32px; }
+
+/* --------------------------------------------------------------------------
+   Sidebar
+   -------------------------------------------------------------------------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 90;
+}
+
+.sidebar-brand {
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 1;
+}
+
+.sidebar-brand img {
+  width: 36px;
+  transition: transform var(--ease);
+}
+
+.sidebar-brand:hover img { transform: scale(1.08); }
+
+.sidebar-nav {
+  padding: var(--space-4) 0 var(--space-16);
+}
+
+.sidebar-nav ul { list-style: none; }
+
+.sidebar-section + .sidebar-section { border-top: 1px solid var(--line); }
+
+.sidebar-row {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-link {
+  flex: 1;
+  padding: var(--space-3) var(--space-6);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-left: 3px solid transparent;
+  transition: color var(--ease), border-color var(--ease), background var(--ease);
+}
+
+.sidebar-link:hover {
+  color: var(--val-red);
+  background: var(--surface-hi);
+}
+
+.sidebar-link.is-active {
+  color: var(--val-red);
+  border-left-color: var(--val-red);
+}
+
+/* Chevron */
+.sidebar-toggle {
+  width: 40px;
+  align-self: stretch;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.sidebar-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text-dim);
+  border-bottom: 2px solid var(--text-dim);
+  transform: translate(-50%, -70%) rotate(45deg);
+  transition: transform var(--ease), border-color var(--ease);
+}
+
+.sidebar-toggle:hover::before { border-color: var(--val-red); }
+
+.sidebar-toggle[aria-expanded='true']::before {
+  transform: translate(-50%, -30%) rotate(-135deg);
+}
+
+/* Collapsible body. grid-template-rows animates to auto height. */
+.sidebar-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--ease);
+}
+
+.sidebar-panel.is-open { grid-template-rows: 1fr; }
+
+.sidebar-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.sidebar-group { padding: var(--space-2) 0 var(--space-3); }
+
+.sidebar-group-title {
+  display: block;
+  padding: var(--space-2) var(--space-6);
+  color: var(--text-dim);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.sidebar-group li a {
+  display: block;
+  padding: var(--space-1) var(--space-6) var(--space-1) var(--space-8);
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  border-left: 3px solid transparent;
+  transition: color var(--ease), border-color var(--ease), background var(--ease);
+}
+
+.sidebar-group li a:hover {
+  color: var(--text);
+  background: var(--surface-hi);
+}
+
+.sidebar-group li a.is-active {
+  color: var(--val-red);
+  border-left-color: var(--val-red);
+}
+
+/* Two columns for the flat lists (maps, line ups) so they stay compact. */
+.sidebar-group ul:only-child {
+  columns: 2;
+  column-gap: 0;
+}
+
+.sidebar-scrim { display: none; }
+
+/* --------------------------------------------------------------------------
+   Off-canvas below 900px
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    position: sticky;
+    top: 0;
+    z-index: 95;
+    height: var(--topbar-height);
+    padding: 0 var(--space-4);
+    background: rgba(15, 25, 35, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sidebar {
+    top: var(--topbar-height);
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform var(--ease), visibility var(--ease);
+    width: min(320px, 85vw);
+  }
+
+  .sidebar.is-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .sidebar-brand { display: none; }
+  .sidebar-nav { padding-top: var(--space-2); }
+
+  .sidebar-scrim {
+    display: block;
+    position: fixed;
+    inset: var(--topbar-height) 0 0 0;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--ease), visibility var(--ease);
+    z-index: 89;
+  }
+
+  .sidebar-scrim.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}

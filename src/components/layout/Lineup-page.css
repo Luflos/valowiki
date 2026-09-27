@@ -1,32 +1,421 @@
 .image-gif {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%
-}
-
-
-
-.container {
-    width: 100%;
-    text-align: center;
+   width: 100%;
+   max-width: 900px;
+   margin: 0 auto;
+   border-radius: var(--radius-lg);
+   border: 1px solid var(--line);
 }
 
 .lineUp-description {
-    max-width: 600px;
-    margin: 0 auto;
+   max-width: 65ch;
+   margin-bottom: var(--space-12);
 }
 
-.lineup-link {
-    text-decoration: None;
+.lineup-links {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: var(--space-4);
+   margin-top: var(--space-8);
 }
 
-.text-link {
-    padding: 10px;
-    font-weight: bold;
-    margin-right: 10px; 
-    font-size: 16px;
-    border: 2px white solid;
-    cursor: pointer;
+.lineup-agent-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: var(--space-6);
 }
 
+.lineup-agent-card {
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   color: inherit;
+}
+
+.lineup-agent-card img {
+   aspect-ratio: 16 / 9;
+   object-fit: cover;
+   width: 100%;
+   transition: transform var(--ease);
+}
+
+.lineup-agent-card:hover img { transform: scale(1.04); }
+
+.lineup-agent-body {
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-2);
+   padding: var(--space-6);
+   border-top: 1px solid var(--line);
+}
+
+.lineup-agent-body h3 { color: var(--text); }
+.lineup-agent-body p { flex: 1; font-size: 0.9rem; }
+
+/* --------------------------------------------------------------------------
+   Agent x map: the role brief
+   -------------------------------------------------------------------------- */
+.role-brief {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: var(--space-4);
+   margin-bottom: var(--space-16);
+}
+
+.role-brief article {
+   padding: var(--space-6);
+   background: var(--surface);
+   border: 1px solid var(--line);
+   border-left: 3px solid var(--val-red);
+   border-radius: var(--radius);
+}
+
+.role-brief h2 {
+   font-size: 0.72rem;
+   text-transform: uppercase;
+   letter-spacing: 0.18em;
+   color: var(--val-red);
+   margin-bottom: var(--space-3);
+}
+
+.role-brief p { font-size: 0.95rem; }
+
+/* Unwritten copy reads as a gap, not as content. */
+.is-blank { opacity: 0.55; font-style: italic; }
+
+.lineup-note {
+   margin-bottom: var(--space-6);
+   font-size: 0.82rem;
+   color: var(--text-dim);
+}
+
+.lineup-note code {
+   color: var(--text);
+   background: var(--surface-hi);
+   padding: 0 var(--space-2);
+   border-radius: 3px;
+   font-size: 0.9em;
+}
+
+/* --------------------------------------------------------------------------
+   Line up entries
+   -------------------------------------------------------------------------- */
+.lineup-list {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-3);
+}
+
+.lineup-entry {
+   background: var(--surface);
+   border: 1px solid var(--line);
+   border-radius: var(--radius);
+   overflow: hidden;
+   transition: border-color var(--ease);
+}
+
+.lineup-entry:hover,
+.lineup-entry.is-open { border-color: var(--val-red); }
+
+.lineup-entry-head {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   gap: var(--space-4);
+   padding: var(--space-3) var(--space-4);
+   background: none;
+   border: none;
+   color: inherit;
+   font: inherit;
+   text-align: left;
+   cursor: pointer;
+}
+
+.lineup-entry-rank {
+   width: 28px;
+   flex-shrink: 0;
+   font-family: var(--font-display);
+   font-size: 1.1rem;
+   color: var(--val-red);
+   text-align: center;
+}
+
+.lineup-entry-thumb {
+   width: 108px;
+   height: 61px;
+   flex-shrink: 0;
+   border-radius: var(--radius);
+}
+
+.lineup-entry-thumb img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.lineup-entry-title {
+   flex: 1;
+   min-width: 0;
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-2);
+}
+
+.lineup-entry-title strong {
+   font-family: var(--font-display);
+   font-size: 1rem;
+   letter-spacing: 0.04em;
+   color: var(--text);
+}
+
+.lineup-entry-chevron {
+   width: 10px;
+   height: 10px;
+   flex-shrink: 0;
+   margin-right: var(--space-2);
+   border-right: 2px solid var(--text-dim);
+   border-bottom: 2px solid var(--text-dim);
+   transform: rotate(45deg);
+   transition: transform var(--ease);
+}
+
+.lineup-entry.is-open .lineup-entry-chevron {
+   transform: rotate(-135deg);
+}
+
+/* --------------------------------------------------------------------------
+   Expanded body
+   -------------------------------------------------------------------------- */
+.lineup-entry-body {
+   padding: 0 var(--space-6) var(--space-6);
+   border-top: 1px solid var(--line);
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-6);
+}
+
+.lineup-why {
+   margin-top: var(--space-6);
+   max-width: 70ch;
+   font-size: 0.95rem;
+   color: var(--text);
+}
+
+.lineup-why span {
+   display: block;
+   margin-bottom: var(--space-2);
+   font-family: var(--font-display);
+   font-size: 0.65rem;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   color: var(--val-red);
+}
+
+.lineup-facts {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+   gap: var(--space-4);
+}
+
+.lineup-facts dt {
+   font-size: 0.65rem;
+   text-transform: uppercase;
+   letter-spacing: 0.16em;
+   color: var(--text-dim);
+   margin-bottom: var(--space-1);
+}
+
+.lineup-facts dd { font-size: 0.9rem; color: var(--text); }
+
+.lineup-steps {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: var(--space-4);
+}
+
+.lineup-step-art {
+   aspect-ratio: 16 / 9;
+   border-radius: var(--radius);
+   border: 1px solid var(--line);
+}
+
+.lineup-step-art img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.lineup-steps figcaption {
+   margin-top: var(--space-2);
+   font-size: 0.68rem;
+   text-transform: uppercase;
+   letter-spacing: 0.14em;
+   color: var(--text-dim);
+}
+
+.lineup-entry-video {
+   aspect-ratio: 16 / 9;
+   display: grid;
+   place-items: center;
+   background: #000;
+   border: 1px solid var(--line);
+   border-radius: var(--radius);
+   overflow: hidden;
+}
+
+.lineup-gaps {
+   font-size: 0.75rem;
+   color: var(--text-dim);
+   opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   Map switcher
+   -------------------------------------------------------------------------- */
+.lineup-switch {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: var(--space-4);
+   margin-top: var(--space-16);
+   padding-top: var(--space-6);
+   border-top: 1px solid var(--line);
+}
+
+.lineup-switch > span {
+   font-family: var(--font-display);
+   font-size: 0.7rem;
+   text-transform: uppercase;
+   letter-spacing: 0.18em;
+   color: var(--text-dim);
+}
+
+.lineup-switch div {
+   display: flex;
+   flex-wrap: wrap;
+   gap: var(--space-2);
+}
+
+.lineup-switch .chip { text-decoration: none; }
+
+@media (max-width: 600px) {
+   .lineup-entry-thumb { display: none; }
+   .lineup-entry-body { padding: 0 var(--space-4) var(--space-4); }
+}
+
+/* --------------------------------------------------------------------------
+   Agent page: map picker
+   -------------------------------------------------------------------------- */
+.map-picker {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   gap: var(--space-4);
+}
+
+.map-picker a {
+   display: flex;
+   align-items: baseline;
+   justify-content: space-between;
+   gap: var(--space-3);
+   padding: var(--space-6);
+   color: inherit;
+}
+
+.map-picker h3 {
+   color: var(--text);
+   transition: color var(--ease);
+}
+
+.map-picker a:hover h3 { color: var(--val-red); }
+
+.map-picker span {
+   font-family: var(--font-display);
+   font-size: 0.72rem;
+   text-transform: uppercase;
+   letter-spacing: 0.14em;
+   color: var(--val-red);
+   white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Agent x map: control panel beside the schematic
+   -------------------------------------------------------------------------- */
+.lineup-layout {
+   display: grid;
+   grid-template-columns: 260px minmax(0, 1fr);
+   gap: var(--space-6);
+   align-items: start;
+   margin-bottom: var(--space-16);
+}
+
+.lineup-controls {
+   display: flex;
+   flex-direction: column;
+   gap: var(--space-6);
+}
+
+.lineup-control-label {
+   display: block;
+   margin-bottom: var(--space-3);
+   font-family: var(--font-display);
+   font-size: 0.68rem;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   color: var(--val-red);
+}
+
+.lineup-control .chip { text-decoration: none; }
+.lineup-control .chip[aria-current="page"] {
+   border-color: var(--val-red);
+   color: var(--text);
+}
+
+.agent-picker {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+   gap: var(--space-2);
+}
+
+.agent-pick {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: var(--space-1);
+   padding: var(--space-2);
+   border: 1px solid var(--line);
+   border-radius: var(--radius);
+   color: var(--text-dim);
+   font-size: 0.62rem;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   transition: border-color var(--ease), color var(--ease), background var(--ease);
+}
+
+.agent-pick img,
+.agent-pick-initial {
+   width: 40px;
+   height: 40px;
+   border-radius: var(--radius);
+   background: var(--surface-hi);
+   display: grid;
+   place-items: center;
+   font-family: var(--font-display);
+   color: var(--text-dim);
+}
+
+.agent-pick:hover {
+   border-color: var(--text-dim);
+   color: var(--text);
+}
+
+.agent-pick.is-active {
+   border-color: var(--val-red);
+   background: rgba(255, 70, 85, 0.08);
+   color: var(--val-red);
+}
+
+@media (max-width: 900px) {
+   .lineup-layout { grid-template-columns: 1fr; }
+   .lineup-map { position: static; }
+}

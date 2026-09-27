@@ -1,65 +1,134 @@
-.agentContainer {
-  background-color: rgb(10,18,27);
-  color: white;
-  text-align: center;
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+.agents-hero {
+  position: relative;
+  height: clamp(220px, 38vw, 420px);
+  overflow: hidden;
 }
 
-.wrapper {
-  display: inline-flex;
-  flex-direction: row;
+.agents-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.agents-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding: var(--space-8) var(--space-6);
+  max-width: var(--page-max);
+  margin: 0 auto;
+  /* Keeps the headline readable over whatever art sits behind it. */
+  background: linear-gradient(
+    to top,
+    var(--bg) 0%,
+    rgba(15, 25, 35, 0.7) 40%,
+    transparent 100%
+  );
+}
+
+.agents-hero-overlay p { color: var(--text-dim); }
+
+/* --------------------------------------------------------------------------
+   Role cards - clickable, they filter the grid below
+   -------------------------------------------------------------------------- */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-16);
+}
+
+.role-card {
+  padding: var(--space-6);
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+.role-card-head {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  /* flex-wrap: wrap; */
-  margin: 20px;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
-.card {
-/* Add shadows to create the "card" effect */
-transition: 0.3s;
-display: flex;
-flex-direction: row;
-border: 1px solid white;
-width: 220px;
+.role-card h3 { color: var(--text); }
+
+.role-card-count {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--val-red);
+  line-height: 1;
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.role-card p { font-size: 0.9rem; }
+
+.role-card[aria-pressed='true'] {
+  border-color: var(--val-red);
+  background: var(--surface-hi);
 }
 
-/* Add some padding inside the card container */
-.container {
-padding: 2px 16px;
+/* --------------------------------------------------------------------------
+   Agent grid
+   -------------------------------------------------------------------------- */
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-4);
 }
 
-.card__image {
-  width: 100px;
-  height: 100px;
+.agent-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.agent-link {
-  color: red;
-  text-decoration: none;
-  padding-bottom: 2px;
+.agent-card-art {
+  position: relative;
+  aspect-ratio: 1;
+  background: linear-gradient(160deg, var(--surface-hi), var(--surface));
+  overflow: hidden;
 }
 
-.roleContainer {
-width: 50%;
-height: 50%;
-float: left;
-border: 1px solid white;
-padding: 24px;
-margin: 53px;
+.agent-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ease);
 }
 
-.agentTitle{
-padding: 10px;
+.agent-card:hover .agent-card-art img { transform: scale(1.08); }
+
+.agent-card-body {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  border-top: 1px solid var(--line);
 }
 
-.roleName {
-color: red;
-padding: 3px;
+.agent-card-body h4 {
+  font-size: 1.05rem;
+  color: var(--text);
+  transition: color var(--ease);
 }
 
-.agent-img {
-width: 60vw;
+.agent-card:hover .agent-card-body h4 { color: var(--val-red); }
+
+.agent-card-role {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+}
+
+@media (max-width: 600px) {
+  .agent-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .result-count { margin-left: 0; }
 }

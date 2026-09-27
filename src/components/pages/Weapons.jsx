@@ -1,43 +1,130 @@
-import { Link } from "react-router-dom"
-import "../layout/Weapons.css"
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import "../layout/Weapons.css";
+import { groupWeaponsByCategory } from "../../utils/valorant";
+import DataState, { SkeletonGrid } from "../layout/DataState";
 
-export default function Weapons({ weapons }) {
-   const categories = new Map()
+export default function Weapons({ weapons, status, onRetry }) {
+  const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
 
-   for (let index = 0; index < weapons.length; index++) {
-      const oneWeapon = weapons[index]
+  // Same grouping the sidebar uses, so categories always match.
+  const categories = useMemo(
+    () => groupWeaponsByCategory(weapons),
+    [weapons]
+  );
 
-      if (!categories.has(oneWeapon.category)) {
-         categories.set(oneWeapon.category, [])
-      }
-      categories.get(oneWeapon.category).push(oneWeapon)
-   }
+  const visibleCategories = useMemo(() => {
+    const search = query.trim().toLowerCase();
 
-   const weaponsList = []
-   for (const arrayOfWeapons of categories.values()) {
-      const displayName = arrayOfWeapons[0].shopData?.category || "Melee"
-      weaponsList.push(<h2 className="center weapons-h2">{displayName}</h2>)
+    return categories
+      .filter(
+        (group) => activeCategory === "All" || group.key === activeCategory
+      )
+      .map((group) => ({
+        ...group,
+        items: group.items.filter(
+          (weapon) =>
+            !search || weapon.displayName.toLowerCase().includes(search)
+        ),
+      }))
+      .filter((group) => group.items.length > 0);
+  }, [categories, query, activeCategory]);
 
-      const weaponsGroup = arrayOfWeapons.map((weapon, idx) => {
-         return (
-            <div key={`weapon-${idx}`}>
-               <h3>{weapon.displayName}</h3>
-               <p>
-                  <br></br>
-                  <Link to={`/weapons/${weapon.uuid}`}>
-                     <img className="weapons-img" src={weapon.displayIcon} alt={weapon.displayName} />
-                  </Link>
-               </p>
+  const totalVisible = visibleCategories.reduce(
+    (sum, group) => sum + group.items.length,
+    0
+  );
+
+  const selectCategory = (category) =>
+    setActiveCategory((current) => (current === category ? "All" : category));
+
+  return (
+    <div className="page">
+      <header className="page-head">
+        <span className="eyebrow">ValoREF</span>
+        <h1>Weapons</h1>
+        <p>
+          {status === "ready"
+            ? `${weapons.length} weapons across ${categories.length} categories`
+            : "Every weapon, grouped by shop category"}
+        </p>
+      </header>
+
+      <DataState
+        status={status}
+        onRetry={onRetry}
+        what="weapons"
+        skeleton={<SkeletonGrid count={8} variant="wide" />}
+      >
+      <div className="filter-bar">
+        <input
+          type="search"
+          className="search-input"
+          placeholder="Search weapons..."
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          aria-label="Search weapons by name"
+        />
+        <div className="chip-row">
+          <button
+            type="button"
+            className="chip"
+            aria-pressed={activeCategory === "All"}
+            onClick={() => setActiveCategory("All")}
+          >
+            All<span className="chip-count">{weapons.length}</span>
+          </button>
+          {categories.map((group) => (
+            <button
+              type="button"
+              key={group.key}
+              className="chip"
+              aria-pressed={activeCategory === group.key}
+              onClick={() => selectCategory(group.key)}
+            >
+              {group.title}
+              <span className="chip-count">{group.items.length}</span>
+            </button>
+          ))}
+        </div>
+        <span className="result-count" role="status" aria-live="polite">
+          {totalVisible} of {weapons.length}
+        </span>
+      </div>
+
+      {visibleCategories.length === 0 ? (
+          <p className="empty-state">No weapons match that search.</p>
+        ) : (
+          visibleCategories.map((group) => (
+          <section key={group.key} className="weapon-section">
+            <h2 className="section-title">{group.title}</h2>
+            <div className="weapon-grid">
+              {group.items.map((weapon) => (
+                <Link
+                  key={weapon.uuid}
+                  to={`/weapons/${weapon.uuid}`}
+                  className="card weapon-card"
+                >
+                  <div className="weapon-card-art">
+                    <img src={weapon.displayIcon} alt={weapon.displayName} />
+                  </div>
+                  <div className="weapon-card-body">
+                    <h4>{weapon.displayName}</h4>
+                    {/* Melee has no shopData, so it has no price to show. */}
+                    {weapon.shopData && (
+                      <span className="weapon-card-cost">
+                        {weapon.shopData.cost} <small>creds</small>
+                      </span>
+                    )}
+                  </div>
+                </Link>
+              ))}
             </div>
-         )
-      })
-      weaponsList.push(<div className="weapons-container">{weaponsGroup}</div>)
-   }
-
-   return (
-      <>
-         <h1 className="center weapons-h1">List of Weapons</h1>
-         <div className="center weapons-div">{weaponsList}</div>
-      </>
-   )
+          </section>
+        ))
+      )}
+      </DataState>
+    </div>
+  );
 }

@@ -1,0 +1,193 @@
+.lineup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.lineup-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+.lineup-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-hi);
+  overflow: hidden;
+}
+
+.lineup-thumb img {
+  width: 100%;
+  height: 100%;
+  /* hqdefault is 4:3 with letterbox bars; cover crops them away. */
+  object-fit: cover;
+  transition: transform var(--ease), opacity var(--ease);
+}
+
+.lineup-card:hover .lineup-thumb img {
+  transform: scale(1.05);
+  opacity: 0.75;
+}
+
+.lineup-thumb-missing {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Play badge */
+.lineup-play {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(15, 25, 35, 0.75);
+  border: 2px solid var(--text);
+  transition: background var(--ease), border-color var(--ease), transform var(--ease);
+}
+
+.lineup-play::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  border-style: solid;
+  border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent var(--text);
+}
+
+.lineup-card:hover .lineup-play {
+  background: var(--val-red);
+  border-color: var(--val-red);
+  transform: scale(1.08);
+}
+
+.lineup-card-body {
+  padding: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+
+.lineup-card-body h4 {
+  font-size: 1rem;
+  color: var(--text);
+  transition: color var(--ease);
+}
+
+.lineup-card:hover .lineup-card-body h4 { color: var(--val-red); }
+
+.lineup-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.lineup-tag {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: 100vh;
+  color: var(--text-dim);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.lineup-tag.is-map {
+  border-color: var(--val-red);
+  color: var(--val-red);
+  background: rgba(255, 70, 85, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   Lightbox
+   -------------------------------------------------------------------------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.lightbox-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.lightbox-panel {
+  position: relative;
+  width: min(1000px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--val-red);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hi);
+  overflow: hidden;
+}
+
+.lightbox-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+}
+
+.lightbox-head h3 { color: var(--text); }
+
+.lightbox-close {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  position: relative;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color var(--ease), background var(--ease);
+}
+
+.lightbox-close:hover {
+  border-color: var(--val-red);
+  background: var(--surface-hi);
+}
+
+.lightbox-close::before,
+.lightbox-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  background: var(--text);
+}
+
+.lightbox-close::before { transform: translate(-50%, -50%) rotate(45deg); }
+.lightbox-close::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.lightbox-video {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+@media (max-width: 600px) {
+  .lineup-grid { grid-template-columns: 1fr; }
+  .lightbox { padding: var(--space-3); }
+  .lightbox-head { padding: var(--space-3) var(--space-4); }
+}

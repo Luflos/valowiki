@@ -1,11 +1,14 @@
 .footer {
-  position: static;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
+   padding: var(--space-8) var(--space-6);
+   border-top: 1px solid var(--line);
+   text-align: center;
 }
 
 .footer-link {
-  text-decoration: none;
+   color: var(--text-dim);
+   font-size: 0.85rem;
+   letter-spacing: 0.08em;
+   transition: color var(--ease);
 }
+
+.footer-link:hover { color: var(--val-red); }

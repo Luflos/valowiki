@@ -1,0 +1,109 @@
+/* --------------------------------------------------------------------------
+   Skeletons
+   -------------------------------------------------------------------------- */
+.skeleton-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.skeleton-grid.is-card { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+.skeleton-grid.is-wide { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.skeleton-grid.is-map  { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-6); }
+
+.skeleton-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.skeleton-art { aspect-ratio: 1; }
+.is-wide .skeleton-art { aspect-ratio: 16 / 10; }
+.is-map .skeleton-art { aspect-ratio: 16 / 9; }
+
+.skeleton-lines {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skeleton-lines span {
+  height: 10px;
+  border-radius: 3px;
+}
+
+.skeleton-lines span:first-child { width: 70%; }
+.skeleton-lines span:last-child { width: 40%; }
+
+/* One shared shimmer across every placeholder surface. */
+.skeleton-art,
+.skeleton-lines span {
+  background: linear-gradient(
+    90deg,
+    var(--surface-hi) 25%,
+    var(--line) 37%,
+    var(--surface-hi) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  from { background-position: 100% 50%; }
+  to { background-position: 0 50%; }
+}
+
+/* index.css already kills animation under prefers-reduced-motion; this keeps
+   the placeholders legible rather than frozen mid-gradient. */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-art,
+  .skeleton-lines span {
+    background: var(--surface-hi);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Error
+   -------------------------------------------------------------------------- */
+.data-error {
+  max-width: 44ch;
+  margin: var(--space-16) auto;
+  padding: var(--space-8);
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--val-red);
+  border-radius: var(--radius-lg);
+}
+
+.data-error h3 {
+  color: var(--text);
+  margin-bottom: var(--space-3);
+}
+
+.data-error p { margin-bottom: var(--space-6); }
+
+/* Page-shaped placeholders for the two views that aren't a grid. */
+.mapdetail-skeleton,
+.compare-skeleton {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    90deg,
+    var(--surface-hi) 25%,
+    var(--line) 37%,
+    var(--surface-hi) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.mapdetail-skeleton { height: 60vh; }
+.compare-skeleton { height: 40vh; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mapdetail-skeleton,
+  .compare-skeleton { background: var(--surface-hi); }
+}

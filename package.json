@@ -1,5 +1,5 @@
 {
-  "name": "hello",
+  "name": "valoref",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lineups:gaps": "node scripts/lineup-gaps.mjs",
+    "lineups:titles": "node scripts/fetch-lineup-titles.mjs"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +40,6 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.0.0-alpha.7"
-  }
+  },
+  "description": "A Valorant companion app for agents, maps, weapons and line ups."
 }

@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom"
+import { asset } from "../../utils/asset";
 
 export default function PageNotFound() {
     return (
-        <div>
-            <h1 style={{ textAlign: "center", paddingTop: "5rem" }}>Page Not Found</h1>
-            <div className="center">
-                <img src="/images/jett404.gif" alt="gif"/>
-            </div>
-            <div className="center" style={{padding: "5rem"}}>
-                <Link to="/">Go Back Home</Link>
+        <div className="page center">
+            <span className="eyebrow">Error 404</span>
+            <h1>Page Not Found</h1>
+            <img
+                src={asset("images/jett404.gif")}
+                alt="Jett dashing away"
+                style={{ margin: "2rem auto", borderRadius: "8px", maxWidth: "480px" }}
+            />
+            <div>
+                <Link to="/" className="btn btn-primary">Go Back Home</Link>
             </div>
         </div>
     )

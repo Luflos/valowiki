@@ -1,0 +1,169 @@
+/* --------------------------------------------------------------------------
+   Controls
+   -------------------------------------------------------------------------- */
+.bundle-controls {
+  display: grid;
+  grid-template-columns: minmax(220px, 2fr) repeat(2, minmax(150px, 1fr));
+  gap: var(--space-4);
+  align-items: end;
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 700px) {
+  .bundle-controls { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------------------
+   Bundle listing
+   -------------------------------------------------------------------------- */
+.bundle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.bundle-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: inherit;
+}
+
+.bundle-card-art { aspect-ratio: 16 / 9; }
+
+.bundle-card-art.is-loaded {
+  background: linear-gradient(160deg, var(--surface-hi), var(--surface));
+}
+
+.bundle-card-art img {
+  width: 100%;
+  height: 100%;
+  /* Promo art is wide; skin renders that stand in for it are not. `contain`
+     suits both without cropping a weapon in half. */
+  object-fit: contain;
+}
+
+.bundle-card:hover .bundle-card-art img { transform: scale(1.04); }
+
+.bundle-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+  border-top: 1px solid var(--line);
+}
+
+.bundle-card-body h3 {
+  color: var(--text);
+  font-size: 1.15rem;
+  transition: color var(--ease);
+}
+
+.bundle-card:hover .bundle-card-body h3 { color: var(--val-red); }
+
+.bundle-card-weapons {
+  flex: 1;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.bundle-card-count {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--val-red);
+}
+
+/* --------------------------------------------------------------------------
+   Bundle detail
+   -------------------------------------------------------------------------- */
+.bundle-hero {
+  margin-bottom: var(--space-12);
+  padding: var(--space-6);
+  background: linear-gradient(160deg, var(--surface-hi), var(--surface));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.bundle-hero img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.bundle-skins {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.bundle-skin {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: inherit;
+  /* Rarity stripe; falls back to the neutral line colour. */
+  border-top: 3px solid var(--tier, var(--line));
+}
+
+.bundle-skin-art {
+  display: grid;
+  place-items: center;
+  height: 120px;
+  padding: var(--space-4);
+}
+
+.bundle-skin-art.is-loaded {
+  background: linear-gradient(160deg, var(--surface-hi), var(--surface));
+}
+
+.bundle-skin-art img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.bundle-skin:hover .bundle-skin-art img { transform: scale(1.06); }
+
+.bundle-skin-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+
+.bundle-skin-body h4 {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.3;
+  transition: color var(--ease);
+}
+
+.bundle-skin:hover .bundle-skin-body h4 { color: var(--val-red); }
+
+.bundle-skin-weapon {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+}
+
+.bundle-skin-tier {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--tier, var(--text-dim));
+}
+
+.bundle-skin-tier img { width: 14px; height: 14px; }
+
+@media (max-width: 600px) {
+  .bundle-grid { grid-template-columns: 1fr; }
+}

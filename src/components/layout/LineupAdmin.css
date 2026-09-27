@@ -1,0 +1,111 @@
+/* Development-only panel. Deliberately looks like a tool rather than part of
+   the site, so it is never mistaken for something a reader should see. */
+.admin {
+   margin-bottom: var(--space-12);
+   background: var(--bg);
+   border: 1px dashed var(--val-red);
+   border-radius: var(--radius);
+   padding: var(--space-4) var(--space-6) var(--space-6);
+}
+
+.admin header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: var(--space-4);
+}
+
+.admin h2 {
+   display: flex;
+   align-items: center;
+   gap: var(--space-3);
+   font-size: 0.78rem;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   color: var(--val-red);
+}
+
+.admin-dot {
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: var(--val-red);
+}
+
+.admin-hint {
+   margin: var(--space-4) 0;
+   font-size: 0.8rem;
+   color: var(--text-dim);
+}
+
+.admin-table {
+   width: 100%;
+   border-collapse: collapse;
+   font-size: 0.8rem;
+}
+
+.admin-table th,
+.admin-table td {
+   padding: var(--space-2) var(--space-3);
+   text-align: left;
+   border-bottom: 1px solid var(--line);
+}
+
+.admin-table thead th {
+   font-family: var(--font-display);
+   font-size: 0.62rem;
+   text-transform: uppercase;
+   letter-spacing: 0.16em;
+   color: var(--text-dim);
+}
+
+.admin-table tbody th {
+   color: var(--text);
+   font-weight: 400;
+   max-width: 220px;
+}
+
+.admin-table tr.is-armed { background: rgba(255, 70, 85, 0.06); }
+
+.admin-cell {
+   width: 100%;
+   padding: var(--space-1) var(--space-2);
+   background: var(--surface);
+   border: 1px solid var(--line);
+   border-radius: 3px;
+   color: var(--text-dim);
+   font: inherit;
+   font-size: 0.72rem;
+   text-align: left;
+   cursor: pointer;
+   transition: border-color var(--ease), color var(--ease);
+}
+
+.admin-cell:hover { color: var(--text); border-color: var(--text-dim); }
+
+.admin-cell[aria-pressed="true"] {
+   border-color: var(--val-red);
+   color: var(--val-red);
+   background: rgba(255, 70, 85, 0.1);
+}
+
+.admin-clear {
+   background: none;
+   border: none;
+   color: var(--text-dim);
+   font: inherit;
+   font-size: 0.7rem;
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+   cursor: pointer;
+}
+
+.admin-clear:hover { color: var(--val-red); }
+
+.admin-status {
+   margin-top: var(--space-4);
+   font-size: 0.78rem;
+}
+
+.admin-status.is-ok { color: var(--text); }
+.admin-status.is-error { color: var(--val-red); }

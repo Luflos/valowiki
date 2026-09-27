@@ -1,51 +1,116 @@
-.agentDetails-Container {
-   background-color: rgb(10, 18, 27);
-   color: white;
+/* --------------------------------------------------------------------------
+   Agent hero
+   -------------------------------------------------------------------------- */
+.agent-hero {
    position: relative;
+   overflow: hidden;
+   border-bottom: 1px solid var(--line);
 }
 
-.agent-detail-img {
-   max-width: 55%;
-   height: auto;
+.agent-hero-bg {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   opacity: 0.25;
 }
 
-.agent-name-img {
-    max-width: 40%;
-    height: auto;
- }
-
-
-.abilities-container {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: space-evenly;
-}
-
-.abilities-div {
+.agent-hero-inner {
+   position: relative;
    display: grid;
-   grid-template-columns: repeat(auto-fit);
-   gap: 20px;
-   max-width: 1500px;
+   grid-template-columns: 1fr auto;
+   align-items: center;
+   gap: var(--space-8);
+   max-width: var(--page-max);
    margin: 0 auto;
-   padding: 0 20px;
+   padding: var(--space-12) var(--space-6);
 }
 
-.desc-div {
-    max-width: 550px;
-    padding-bottom: 30px;
+.agent-hero-text h1 {
+   font-size: clamp(2.5rem, 8vw, 5rem);
+   margin: var(--space-3) 0;
+   line-height: 0.95;
 }
 
-.ability-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
+.agent-role-badge {
+   display: inline-flex;
+   align-items: center;
+   gap: var(--space-2);
+   padding: var(--space-2) var(--space-4);
+   background: rgba(255, 70, 85, 0.12);
+   border: 1px solid var(--val-red);
+   border-radius: 100vh;
+   color: var(--val-red);
+   font-family: var(--font-display);
+   font-size: 0.75rem;
+   text-transform: uppercase;
+   letter-spacing: 0.16em;
+}
+
+.agent-role-badge img {
+   width: 16px;
+   height: 16px;
+   /* Role icons ship white; tint them to match the badge. */
+   filter: invert(38%) sepia(72%) saturate(3000%) hue-rotate(332deg);
 }
 
 .agent-desc {
-    max-width: 800px;
-    margin: auto;
-    margin-bottom: 30px;
-    font-size: 20px;
+   max-width: 60ch;
+   font-size: 1rem;
+}
+
+.agent-portrait {
+   max-height: 420px;
+   width: auto;
+   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+}
+
+/* --------------------------------------------------------------------------
+   Abilities
+   -------------------------------------------------------------------------- */
+.abilities-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+   gap: var(--space-4);
+}
+
+.ability-card {
+   padding: var(--space-6);
+   text-align: center;
+}
+
+.ability-img {
+   width: 56px;
+   height: 56px;
+   margin: 0 auto var(--space-4);
+}
+
+.ability-slot {
+   display: block;
+   color: var(--val-red);
+   font-family: var(--font-display);
+   font-size: 0.7rem;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   margin-bottom: var(--space-1);
+}
+
+.ability-card h3 {
+   color: var(--text);
+   margin-bottom: var(--space-3);
+   font-size: 1.1rem;
+}
+
+.ability-card p {
+   font-size: 0.88rem;
+   text-align: left;
+}
+
+@media (max-width: 800px) {
+   .agent-hero-inner { grid-template-columns: 1fr; }
+   .agent-portrait {
+      max-height: 280px;
+      margin: 0 auto;
+   }
 }

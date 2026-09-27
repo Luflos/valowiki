@@ -1,0 +1,154 @@
+/* Series colours live in index.css as --series-1 / --series-2, where their
+   validation is documented. The app is dark-only, so only dark steps exist. */
+.chart {
+  position: relative;
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.chart-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.chart-head h3 { color: var(--text); }
+
+.chart-sub {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.chart-toggle { flex-shrink: 0; }
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  list-style: none;
+  margin-bottom: var(--space-4);
+}
+
+.chart-legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  /* Text keeps ink colour; the swatch carries identity. */
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
+.chart-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.chart-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.chart-grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.chart-crosshair {
+  stroke: var(--text-dim);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.chart-line {
+  fill: none;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chart-dot {
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.chart-tick {
+  fill: var(--text-dim);
+  font-size: 12px;
+}
+
+.chart-axis-label,
+.chart-direct-label {
+  fill: var(--text-dim);
+  font-size: 12px;
+}
+
+.chart-direct-label {
+  fill: var(--text);
+  font-size: 13px;
+}
+
+.chart-tooltip {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.chart-tooltip strong { color: var(--text); }
+.chart-tooltip b { color: var(--text); }
+
+.chart-tooltip span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.chart-table-wrap { overflow-x: auto; }
+
+.chart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.chart-table th,
+.chart-table td {
+  padding: var(--space-2) var(--space-3);
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-dim);
+}
+
+.chart-table thead th {
+  color: var(--text);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+.chart-table tbody th { text-align: left; color: var(--text); }
+
+@media (max-width: 600px) {
+  .chart { padding: var(--space-4); }
+  .chart-tooltip {
+    position: static;
+    margin-top: var(--space-4);
+  }
+}

@@ -1,42 +1,66 @@
 .cards-contact {
-   display: flex;
-   flex-direction: row;
+   display: grid;
+   /* auto-fit would stretch a lone card across the whole page, so cap the
+      track rather than letting one person fill six columns. */
+   grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
    justify-content: center;
-   flex-wrap: wrap;
+   gap: var(--space-6);
    align-items: stretch;
-   gap: 30px;
-   
- }
+}
+
 .card-contact {
-   flex: 0 0 300px;
-   margin: 10px;
-   border: 1px solid #ccc;
-   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+   display: flex;
+   flex-direction: column;
+   background: var(--surface);
+   border: 1px solid var(--line);
+   border-radius: var(--radius);
+   overflow: hidden;
+   transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+}
+
+.card-contact:hover {
+   transform: translateY(-4px);
+   border-color: var(--val-red);
+   box-shadow: var(--shadow-hi);
 }
 
 .card-contact img {
-   max-width: 100%;
-}
-
-.card-contact .text > button {
-   background: gray;
-   border: 0;
-   color: white;
-   padding: 10px;
    width: 100%;
-}
- 
-.team-title {
-   text-align: center;
-   margin: 10px;
-}
- 
-.inner-text {
-   margin-top: 15px;
-   margin-bottom: 15px;
+   aspect-ratio: 1;
+   object-fit: cover;
 }
 
-.descriptionApp {
- font-size: 16px;
- margin: 10px;
+.card-contact .text {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   padding: var(--space-6);
+   border-top: 1px solid var(--line);
+}
+
+.card-contact h3 {
+   color: var(--text);
+   margin-bottom: var(--space-3);
+}
+
+.inner-text {
+   flex: 1;
+   font-size: 0.88rem;
+   margin-bottom: var(--space-4);
+}
+
+.card-socials {
+   display: flex;
+   gap: var(--space-4);
+}
+
+.card-contact .text a {
+   display: inline-flex;
+   color: var(--text-dim);
+   transition: color var(--ease), transform var(--ease);
+}
+
+.card-contact .text a:hover {
+   color: var(--val-red);
+   transform: translateY(-2px);
 }
